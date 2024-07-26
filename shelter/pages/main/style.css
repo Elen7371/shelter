@@ -71,7 +71,10 @@ body {
   line-height: 24px;
   font-weight: 400;
   color: var(--grayDarkXL);
-  margin: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /* настройка header */
@@ -83,6 +86,7 @@ body {
 
 .header {
   position: fixed;
+  /* поправить - хедер прилип сверху и наезжает на верхние элементы. нужно это поправить */
   top: 0;
   left: 0;
   width: 100%;
@@ -115,6 +119,10 @@ body {
 .header-logo {
   padding-left: 0;
 }
+
+/* section {
+  max-width: 1200px;
+} */
 
 .header-logo-title {
   font-family: "Georgia";
@@ -212,6 +220,35 @@ body {
   /* проверить в тз насчет переноса */
 }
 
-li {
-  list-style-type: none;
+/* секция about */
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 35px;
+  line-height: 46px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  margin: 0;
+}
+
+.about-content {
+  max-width: 430px;
+  margin-bottom: 25px;
+  margin-left: 120px;
+}
+
+.about-content:last-child {
+  margin-bottom: 0;
 }
