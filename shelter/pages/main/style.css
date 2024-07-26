@@ -1,7 +1,217 @@
-html,
+/* подключение шрифтов */
+
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../assets/fonts/georgia.ttf);
+}
+
+@font-face {
+  font-family: "Georgia";
+  font-style: bold;
+  font-weight: 700;
+  src: url(../../assets/fonts/georgia_bolditalic.ttf);
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../assets/fonts/arialmt.ttf);
+}
+
+@font-face {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 700;
+  src: url(../../assets/fonts/arial_bolditalicmt.ttf);
+}
+
+/* подключение цветовых стилей */
+
+:root {
+  font-size: 15px;
+
+  --peachPrimary: #f1cdb3;
+  --peachLight: #fddcc4;
+
+  --whiteLightXL: #ffffff;
+
+  --grayLightS: #fafafa;
+  --grayLightL: #f6f6f6;
+
+  --grayDarkS: #cdcdcd;
+  --grayDarkM: #b2b2b2;
+  --grayDarkL: #545454;
+  --grayDarkXL: #4c4c4c;
+  --grayDark2XL: #444444;
+  --grayDark3XL: #292929;
+
+  --start-screen-gradient: radial-gradient(#5b483a, #262425);
+  --footer-gradient: radial-gradient(#513d2f, #1a1a1c);
+}
+
+/* Общие свойства */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: Arial, serif;
-  font-size: 14px;
+  font-family: "Arial";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--grayDarkXL);
   margin: 0;
-  padding: 0;
+}
+
+/* настройка header */
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: nowrap;
+  /* justify-content: center; */
+}
+
+/* проверить в тз насчет переноса */
+
+.header-item {
+  margin-right: 47px;
+}
+
+.header-item:last-child {
+  margin-right: 0;
+}
+
+.header-logo {
+  padding-left: 0;
+}
+
+.header-logo-title {
+  font-family: "Georgia";
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+  color: var(--peachPrimary);
+  text-decoration: none;
+  padding-left: 0;
+}
+
+.header-logo-subtitle {
+  font-family: "Arial";
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--whiteLightXL);
+  text-decoration: none;
+}
+
+.header-link {
+  color: var(--grayDarkS);
+  text-decoration: none;
+  height: 24px;
+  padding-bottom: 5px;
+}
+
+.header-link:active {
+  color: var(--grayLightS);
+  border-bottom: 3px solid var(--peachPrimary);
+}
+
+.header-link:hover {
+  color: var(--grayLightS);
+  height: 24px;
+  text-decoration: none;
+}
+
+/* настройка баннера главного экрана */
+
+.start-screen {
+  height: 1071px;
+  background: url(../../assets/images/start-screen-gradient-background.jpg)
+    no-repeat center;
+  background-size: cover;
+  padding-top: 343px;
+}
+
+.banner-subtitle {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 44px;
+  line-height: 57px;
+  font-weight: 400;
+  color: var(--whiteLightXL);
+  margin: 0 0 42px 0;
+  max-width: 310px;
+}
+
+.banner-story {
+  margin: 0 0 42px 0;
+  max-width: 460px;
+  color: var(--grayDarkS);
+}
+
+.btn-primary {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  margin: 0;
+  background-color: var(--peachPrimary);
+  padding: 16px 52px;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--peachLight);
+}
+
+.start-screen-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* проверить в тз насчет переноса */
+}
+
+li {
+  list-style-type: none;
 }
