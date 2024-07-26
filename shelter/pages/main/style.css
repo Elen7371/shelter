@@ -357,3 +357,50 @@ img {
   display: inline-block;
   margin-bottom: 98px;
 }
+
+/* секция о помощи */
+
+.help-content-wrapper {
+  position: flex;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-row-1 {
+  max-width: 113px;
+  display: grid;
+  grid-template-columns: 83px 150px 60px 154px 101px;
+  text-align: center;
+  column-gap: 120px;
+  margin-bottom: 55px;
+  margin-left: 87px;
+  /* margin-right: 203px; */
+}
+
+.grid-row-2 {
+  max-width: 113px;
+  display: grid;
+  grid-template-columns: 89px 101px 165px 147px;
+  text-align: center;
+  column-gap: 120px;
+  margin-left: 190px;
+  padding-bottom: 90px;
+}
+
+.wish-item > h3 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+}
+
+
+.help-content-wrapper > h2 {
+  padding-top: 90px;
+  padding-bottom: 60px;
+  text-align: center;
+}
