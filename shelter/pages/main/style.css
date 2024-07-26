@@ -77,6 +77,11 @@ ul {
   list-style-type: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* настройка header */
 
 .wrapper {
@@ -85,8 +90,7 @@ ul {
 }
 
 .header {
-  position: fixed;
-  /* поправить - хедер прилип сверху и наезжает на верхние элементы. нужно это поправить */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -194,7 +198,7 @@ ul {
   line-height: 22px;
   font-weight: 400;
   color: var(--grayDark3XL);
-  margin: 0;
+  margin: 0 auto;
   background-color: var(--peachPrimary);
   padding: 16px 52px;
   border-radius: 100px;
@@ -251,4 +255,105 @@ ul {
 
 .about-content:last-child {
   margin-bottom: 0;
+}
+
+/* секция о животных в поиске дома */
+
+.pets-content-wrapper {
+  background-color: var(--grayLightL);
+  background-size: 100%;
+  justify-content: center;
+  text-align: center;
+}
+.offers-pets-wrapper {
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pets-content-title {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  padding: 90px 0;
+}
+
+.pet-card {
+  background-color: var(--grayLightS);
+  height: 435px;
+}
+
+.btn-arrow {
+  padding: 12.5px 14px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  border-radius: 100px;
+  text-decoration: none;
+  border: 2px solid var(--peachPrimary);
+}
+
+.btn-arrow:hover {
+  background-color: var(--peachLight);
+  border: none;
+}
+
+.btn-secondary {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  margin: 0 auto;
+  padding: 16px 52px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 2px solid var(--peachPrimary);
+  /* position: relative; */
+}
+
+.btn-secondary:hover {
+  background-color: var(--peachLight);
+  border: none;
+}
+
+.pet-name {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  padding: 20px 0;
+  margin: 0 0 30px 0;
+  /* понять как настроить отступы внутри */
+}
+
+.slider {
+  position: relative;
+  /* padding-bottom: 210px; */
+  margin-bottom: 60px;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-bottom: 98px;
 }
