@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Georgia";
-  font-style: bold;
+  font-style: italic;
   font-weight: 700;
   src: url(../../assets/fonts/georgia_bolditalic.ttf);
 }
@@ -71,6 +71,7 @@ body {
   line-height: 24px;
   font-weight: 400;
   color: var(--grayDarkXL);
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -107,10 +108,7 @@ img {
 .header-list {
   display: flex;
   flex-wrap: nowrap;
-  /* justify-content: center; */
 }
-
-/* проверить в тз насчет переноса */
 
 .header-item {
   margin-right: 47px;
@@ -123,10 +121,6 @@ img {
 .header-logo {
   padding-left: 0;
 }
-
-/* section {
-  max-width: 1200px;
-} */
 
 .header-logo-title {
   font-family: "Georgia";
@@ -162,6 +156,12 @@ img {
   color: var(--grayLightS);
   height: 24px;
   text-decoration: none;
+}
+
+.header-item > .disabled {
+  color: var(--grayLightS);
+  border-bottom: 3px solid var(--peachPrimary);
+  pointer-events: none;
 }
 
 /* настройка баннера главного экрана */
@@ -207,6 +207,7 @@ img {
 
 .btn-primary:hover {
   background-color: var(--peachLight);
+  transition: 1s;
 }
 
 .start-screen-wrapper {
@@ -221,7 +222,6 @@ img {
 .header-list {
   display: flex;
   flex-wrap: wrap;
-  /* проверить в тз насчет переноса */
 }
 
 /* секция about */
@@ -313,6 +313,7 @@ img {
 .btn-arrow:hover {
   background-color: var(--peachLight);
   border: none;
+  transition: 1s;
 }
 
 .btn-secondary {
@@ -327,12 +328,12 @@ img {
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
-  /* position: relative; */
 }
 
 .btn-secondary:hover {
   background-color: var(--peachLight);
   border: none;
+  transition: 1s;
 }
 
 .pet-name {
@@ -344,12 +345,10 @@ img {
   color: var(--grayDarkL);
   padding: 20px 0;
   margin: 0 0 30px 0;
-  /* понять как настроить отступы внутри */
 }
 
 .slider {
   position: relative;
-  /* padding-bottom: 210px; */
   margin-bottom: 60px;
 }
 
@@ -358,10 +357,26 @@ img {
   margin-bottom: 98px;
 }
 
+/* растягиваем ссылку на всю карточку блок our-friens + help/donation + footer */
+
+.pet-card,
+.credit-card-wrap,
+.data-wrapper {
+  position: relative;
+}
+
+.pet-card > a::before,
+.credit-card-wrap > a::before,
+.data-wrapper > a::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+
 /* секция о помощи */
 
 .help-content-wrapper {
-  position: flex;
+  position: relative;
   max-width: 1200px;
   align-items: center;
   justify-content: center;
@@ -436,7 +451,7 @@ img {
   padding: 10px 15px;
 }
 
-.credit-card-wrap > h3 {
+.credit-card-wrap > a {
   font-family: "Georgia";
   font-style: normal;
   font-size: 20px;
@@ -444,7 +459,8 @@ img {
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  margin: 0 0 0 15px;
+  margin-left: 15px;
+  text-decoration: none;
 }
 
 .donation-content > p {
@@ -471,7 +487,7 @@ img {
 }
 
 .footer-wrapper {
-  position: flex;
+  position: relative;
   padding: 40px 0 0 0;
 }
 
@@ -501,7 +517,7 @@ img {
   padding-right: 20px;
 }
 
-.data-wrapper > p {
+.data-wrapper > a {
   margin: 0;
   font-family: "Georgia";
   font-style: normal;
@@ -510,6 +526,7 @@ img {
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--peachPrimary);
+  text-decoration: none;
 }
 
 /* доработать стили почистить h3 по тексту*/

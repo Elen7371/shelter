@@ -37,16 +37,18 @@
           <nav class="header-nav">
             <ul class="header-list">
               <li class="header-item">
-                <a href="about.html" class="header-link">About the shelter</a>
+                <a href="about.html" class="header-link disabled"
+                  >About the shelter</a
+                >
               </li>
               <li class="header-item">
-                <a href="ourpets.html" class="header-link">Our pets</a>
+                <a href="#our-pets" class="header-link">Our pets</a>
               </li>
               <li class="header-item">
-                <a href="help.html" class="header-link">Help the shelter</a>
+                <a href="#help" class="header-link">Help the shelter</a>
               </li>
               <li class="header-item">
-                <a href="contacts.html" class="header-link">Contacts</a>
+                <a href="#contacts" class="header-link">Contacts</a>
               </li>
             </ul>
           </nav>
@@ -55,6 +57,7 @@
     </header>
     <main class="main">
       <!-- центральный баннер с собакой -->
+
       <section class="start-screen">
         <div class="start-screen-wrapper wrapper">
           <div class="banner-content">
@@ -64,7 +67,7 @@
               extremely wide and open heart. He or she will love you more than
               anybody else in the world, you will see!
             </p>
-            <a href="#" class="btn btn-primary">Make a friend</a>
+            <a href="#our-friends" class="btn btn-primary">Make a friend</a>
           </div>
           <div class="banner-img">
             <img
@@ -108,7 +111,7 @@
 
       <!-- секция о питомцах -->
 
-      <section class="pets-content">
+      <section class="pets-content" id="our-friends">
         <div class="pets-content-wrapper">
           <h2 class="title pets-content-title">
             Our friends who <br />are looking for a house
@@ -156,11 +159,11 @@
               </div>
             </div>
           </div>
-          <a href="#" class="btn btn-primary">Get to know the rest</a>
+          <a href="#our-pets" class="btn btn-primary">Get to know the rest</a>
         </div>
       </section>
       <!-- секция как вы можете нам помочь -->
-      <section class="help-content">
+      <section class="help-content" id="help">
         <div class="help-content-wrapper wrapper">
           <h2 class="title">How you can help<br />our shelter</h2>
           <div class="wish-list-grid">
@@ -240,7 +243,7 @@
                   src="../../assets/icons/icon-collars-leashes.svg"
                   alt="Collars and leashes icon"
                 />
-                <h3>Collars&nbsp/&nbspleashes</h3>
+                <h3>Collars&nbsp;&#47;&nbsp;leashes</h3>
               </div>
 
               <div class="wish-item">
@@ -276,7 +279,10 @@
                   src="../../assets/icons/credit-card.svg"
                   alt="Credit card icon"
                 />
-                <h3>8380&nbsp2880&nbsp8028&nbsp8791&nbsp7435</h3>
+
+                <a href="#" class="btn btn-card"
+                  >8380&nbsp;2880&nbsp;8028&nbsp;8791&nbsp;7435</a
+                >
               </div>
               <p>
                 Legal information and lorem ipsum dolor sit amet, consectetur
@@ -290,37 +296,48 @@
       </section>
     </main>
 
-    <footer>
+    <footer id="contacts">
       <div class="footer-wrapper">
         <div class="footer-grid wrapper">
           <h3 class="title">For questions<br />and suggestions</h3>
+
           <div class="email-data data-wrapper">
             <img src="../../assets/icons/icon-email.svg" alt="Email logo" />
-            <p>email@shelter.com</p>
+            <a href="mailto:email@shelter.com">email@shelter.com</a>
           </div>
+
           <div class="phone-data data-wrapper">
-            <img src="../../assets/icons/phone.svg" alt="" />
-            <p>+13 674 567 75 54</p>
+            <img src="../../assets/icons/phone.svg" alt="Phone logo" />
+            <a href="tel:+136745677554">+13 674 567 75 54</a>
           </div>
+
           <h3 class="title">We are waiting<br />for your visit</h3>
           <div class="address-data-1 data-wrapper">
             <img
               src="../../assets/icons/icon-marker.svg"
               alt="Icon of location"
             />
-            <p>1 Central Street, Boston<br />(entrance from the store)</p>
+            <a
+              href="https://www.google.com/maps?ll=55.836360,37.447503"
+              target="_blank"
+              >1 Central Street, Boston<br />(entrance from the store)</a
+            >
           </div>
+
           <div class="adsress-data-2 data-wrapper">
             <img
               src="../../assets/icons/icon-marker.svg"
               alt="Icon of location"
             />
-            <p>18 South Park, London</p>
+            <a
+              href="https://www.google.com/maps?ll=55.836360,37.447503"
+              target="_blank"
+              >18 South Park, London</a
+            >
           </div>
           <img
             class="footer-image"
             src="../../assets/images/footer-puppy.png"
-            class="footer-image"
             alt="Cute puppy licks the screen"
           />
         </div>
