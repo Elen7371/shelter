@@ -375,7 +375,6 @@ img {
   column-gap: 120px;
   margin-bottom: 55px;
   margin-left: 87px;
-  /* margin-right: 203px; */
 }
 
 .grid-row-2 {
@@ -396,11 +395,131 @@ img {
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--grayDarkL);
+  margin: 30px 0 0 0;
 }
-
 
 .help-content-wrapper > h2 {
   padding-top: 90px;
   padding-bottom: 60px;
   text-align: center;
+}
+
+/* секция donation */
+
+.donation-wrapper {
+  background-color: var(--grayLightL);
+  background-size: 100%;
+  padding: 90px 0;
+}
+
+.donation-content-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.donation-content > h4 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  margin: 20px 0;
+}
+
+.credit-card-wrap {
+  display: inline-flex;
+  border-radius: 9px;
+  background-color: var(--peachPrimary);
+  padding: 10px 15px;
+}
+
+.credit-card-wrap > h3 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  margin: 0 0 0 15px;
+}
+
+.donation-content > p {
+  font-family: "Arial";
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--grayDarkM);
+  margin-top: 20px;
+  max-width: 380px;
+}
+
+.donation-content {
+  margin-left: 30px;
+}
+
+/* секция footer */
+
+.footer-wrapper {
+  background: url(../../assets/images/footer-gradient-background.jpg) no-repeat
+    center;
+  background-size: cover;
+}
+
+.footer-wrapper {
+  position: flex;
+  padding: 40px 0 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 280px 300px 300px;
+  grid-template-rows: auto auto auto;
+  grid-auto-flow: column;
+  grid-column: 4;
+  width: 1200px;
+  column-gap: 160px;
+  row-gap: 32px;
+}
+
+.footer-image {
+  grid-row: span 3;
+}
+
+.data-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.data-wrapper > img {
+  height: 32px;
+  width: auto;
+  padding-right: 20px;
+}
+
+.data-wrapper > p {
+  margin: 0;
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--peachPrimary);
+}
+
+/* доработать стили почистить h3 по тексту*/
+
+.footer-grid > h3 {
+  color: var(--whiteLightXL);
+  margin: 16px 0 0 0;
+}
+
+.phone-data,
+.adsress-data-2 {
+  padding-bottom: 60px;
 }
