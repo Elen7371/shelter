@@ -1,0 +1,405 @@
+/* подключение шрифтов */
+
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../assets/fonts/georgia.ttf);
+}
+
+@font-face {
+  font-family: "Georgia";
+  font-style: italic;
+  font-weight: 700;
+  src: url(../../assets/fonts/georgia_bolditalic.ttf);
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../assets/fonts/arialmt.ttf);
+}
+
+@font-face {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 700;
+  src: url(../../assets/fonts/arial_bolditalicmt.ttf);
+}
+
+/* подключение цветовых стилей */
+
+:root {
+  font-size: 15px;
+
+  --peachPrimary: #f1cdb3;
+  --peachLight: #fddcc4;
+
+  --whiteLightXL: #ffffff;
+
+  --grayLightS: #fafafa;
+  --grayLightL: #f6f6f6;
+
+  --grayDarkS: #cdcdcd;
+  --grayDarkM: #b2b2b2;
+  --grayDarkL: #545454;
+  --grayDarkXL: #4c4c4c;
+  --grayDark2XL: #444444;
+  --grayDark3XL: #292929;
+
+  --start-screen-gradient: radial-gradient(#5b483a, #262425);
+  --footer-gradient: radial-gradient(#513d2f, #1a1a1c);
+}
+
+/* Общие свойства */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: var(--grayDarkL);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  outline: none;
+  outline-offset: 0;
+}
+
+body {
+  font-family: "Arial";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* настройка header */
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  /* width: 100%; */
+  background-color: var(--whiteLightXL);
+  background-size: 100%;
+  padding: 30px 0;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.header-logo-wrapper {
+  padding: 0;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-item {
+  margin: 0 47px 0 0;
+}
+
+.header-item:last-child {
+  margin-right: 0;
+}
+
+.header-logo-title {
+  font-family: "Georgia";
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+  color: var(--grayDarkL);
+  text-decoration: none;
+}
+
+.header-logo-subtitle {
+  font-family: "Arial";
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--grayDark3XL);
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.header-link {
+  color: var(--grayDarkL);
+  text-decoration: none;
+  margin: 0 auto;
+  padding-bottom: 5px;
+}
+
+.header-link:active {
+  color: var(--grayDarkL);
+  border-bottom: 3px solid var(--peachPrimary);
+}
+
+.header-link:hover {
+  color: var(--grayDark3XL);
+  text-decoration: none;
+}
+
+.header-item > .disabled {
+  color: var(--grayDark3XL);
+  border-bottom: 3px solid var(--peachPrimary);
+  pointer-events: none;
+}
+
+/*  секция pets-about*/
+
+.btn-primary {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  margin: 0 auto;
+  background-color: var(--peachPrimary);
+  padding: 16px 52px;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--peachLight);
+  transition: 1s;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* секция о животных в поиске дома */
+
+.title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 35px;
+  line-height: 46px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  margin: 0;
+}
+.pets-content-wrapper {
+  background-color: var(--grayLightL);
+  background-size: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.offers-pets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  grid-template-rows: repeat(2, 435px);
+  row-gap: 30px;
+  column-gap: 40px;
+  /* max-width: 1200px; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pets-content-title {
+  padding: 80px 0 45px 0;
+}
+
+.pet-card {
+  background-color: var(--grayLightS);
+  height: 435px;
+}
+/* кнопки пагинации */
+
+.pagination-wrapper {
+  padding: 45px 0 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-round {
+  width: 52px;
+  height: 52px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  border-radius: 100px;
+  margin-right: 20px;
+  align-content: center;
+}
+
+.inactive {
+  color: var(--grayDarkS);
+  border: 2px solid var(--grayDarkS);
+  background: transparent;
+  pointer-events: none;
+}
+
+.here {
+  color: var(--grayDark3XL);
+  background-color: var(--peachPrimary);
+  border: none;
+}
+
+.active {
+  color: var(--grayDark3XL);
+  background-color: transparent;
+  border: 2px solid var(--peachPrimary);
+}
+
+.btn-round > a {
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  text-align: center;
+}
+
+.btn-secondary {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  margin: 0 auto;
+  padding: 16px 52px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 2px solid var(--peachPrimary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--peachLight);
+  border: none;
+  transition: 1s;
+}
+
+.btn-round:hover {
+  background-color: var(--peachLight);
+  border: none;
+  transition: 1s;
+}
+
+.pet-name {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  padding: 20px 0;
+  margin: 0 0 30px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-bottom: 98px;
+}
+
+/* растягиваем ссылку на всю карточку блок our-friens + footer + кнопки пагинации */
+
+.pet-card,
+.data-wrapper,
+.btn-round {
+  position: relative;
+}
+
+.pet-card > a::before,
+.data-wrapper > a::before,
+.btn-round > a::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+
+/* секция footer */
+
+.footer-wrapper {
+  background: url(../../assets/images/footer-gradient-background.jpg) no-repeat
+    center;
+  background-size: cover;
+}
+
+.footer-wrapper {
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 280px 300px 300px;
+  grid-template-rows: auto auto auto;
+  grid-auto-flow: column;
+  grid-column: 4;
+  width: 1200px;
+  column-gap: 160px;
+  row-gap: 32px;
+  padding-top: 40px;
+}
+
+.footer-image {
+  grid-row: span 3;
+}
+
+.data-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.data-wrapper > img {
+  height: 32px;
+  width: auto;
+  padding-right: 20px;
+}
+
+.data-wrapper > a {
+  margin: 0;
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--peachPrimary);
+  text-decoration: none;
+}
+
+/* доработать стили почистить h3 по тексту*/
+
+.footer-grid > h3 {
+  color: var(--whiteLightXL);
+  margin: 16px 0 0 0;
+}
+
+.phone-data,
+.adsress-data-2 {
+  padding-bottom: 60px;
+}

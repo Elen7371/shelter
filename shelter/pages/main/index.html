@@ -1,0 +1,365 @@
+<!-- main page -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cozy House - shelter for pets in Boston"
+    />
+    <meta
+      name="keywords"
+      content="shelter, pets, dogs, cats, puppy, friend, Boston, help, house"
+    />
+
+    <title>Cozy House Shelter</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../../assets/icons/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- блок хедера -->
+
+    <header class="header">
+      <div class="wrapper">
+        <div class="header-wrapper">
+          <ul class="header-logo">
+            <li>
+              <a href="#" class="header-logo-title">Cozy House</a>
+            </li>
+            <li>
+              <a href="#" class="header-logo-subtitle"
+                >Shelter for pets in Boston</a
+              >
+            </li>
+          </ul>
+
+          <nav class="header-nav">
+            <ul class="header-list">
+              <li class="header-item">
+                <a href="about.html" class="header-link disabled"
+                  >About the shelter</a
+                >
+              </li>
+              <li class="header-item">
+                <a href="../../pages/pets/index.html" class="header-link"
+                  >Our pets</a
+                >
+              </li>
+              <li class="header-item">
+                <a href="#help" class="header-link">Help the shelter</a>
+              </li>
+              <li class="header-item">
+                <a href="#contacts" class="header-link">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <!-- центральный баннер с собакой -->
+
+      <section class="start-screen">
+        <div class="start-screen-wrapper wrapper">
+          <div class="banner-content">
+            <h1 class="banner-subtitle">Not only people need a house</h1>
+            <p class="banner-story">
+              We offer to give a chance to a little and nice puppy with an
+              extremely wide and open heart. He or she will love you more than
+              anybody else in the world, you will see!
+            </p>
+            <a href="#our-friends" class="btn btn-primary">Make a friend</a>
+          </div>
+          <img
+            class="main-banner-image"
+            src="../../assets/images/start-screen-puppy.png"
+            alt="Cute puppy looks at you"
+          />
+        </div>
+      </section>
+      <!-- секция about -->
+      <section class="about-the-shelter">
+        <div class="about-wrapper">
+          <div class="about-image">
+            <img
+              class="banner-image"
+              src="../../assets/images/about-pets.jpg"
+              alt="Cute cat and dog look at you"
+            />
+          </div>
+          <div class="about-content-wrapper">
+            <h2 class="title about-content">
+              About the shelter &#8220;Cozy&nbsp;House&#8221;
+            </h2>
+            <p class="about-content">
+              Currently we have 121 dogs and 342 cats on our hands and
+              statistics show that only 20% of them will find a family. The
+              others will continue to live with us and will be waiting for
+              a&nbsp;lucky chance to become dearly loved.
+            </p>
+            <p class="about-content">
+              We feed our wards with the best food and make sure that
+              they&nbsp;do not get sick, feel comfortable (including
+              psychologically) and well. We are supported by 87 volunteers and
+              28 employees of various skill levels. About 12% of the animals are
+              taken by the shelter staff. Taking care of the animals, they
+              become attached to the pets and would hardly ever leave them
+              alone.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- секция о питомцах -->
+
+      <section class="pets-content" id="our-friends">
+        <div class="pets-content-wrapper">
+          <h2 class="title pets-content-title">
+            Our friends who <br />are looking for a house
+          </h2>
+          <div class="offers-pets-wrapper">
+            <!-- карусель -->
+            <div class="slider">
+              <div class="left-arrow">
+                <a href="#" class="btn btn-arrow">&#x2190;</a>
+                <!-- поправить кнопку -->
+              </div>
+              <div class="pet-card">
+                <img
+                  width="270"
+                  src="../../assets/images/pets-katrine.jpg"
+                  alt="pet Katrine grey cat"
+                />
+                <p class="pet-name">Katrine</p>
+                <a href="../../pages/pets/index.html" class="btn btn-secondary"
+                  >Learn more</a
+                >
+              </div>
+
+              <div class="pet-card">
+                <img
+                  width="270"
+                  src="../../assets/images/pets-jennifer.jpg"
+                  alt="pet Jennifer labrador puppy"
+                />
+                <p class="pet-name">Jennifer</p>
+                <a
+                  href="../../pages/pets/index.html"
+                  class="btn btn-secondary btn-to-pets"
+                  >Learn more</a
+                >
+              </div>
+
+              <div class="pet-card">
+                <img
+                  width="270"
+                  src="../../assets/images/pets-woody.jpg"
+                  alt="pet Woody gold retriver dog"
+                />
+                <p class="pet-name">Woody</p>
+                <a href="../../pages/pets/index.html" class="btn btn-secondary"
+                  >Learn more</a
+                >
+              </div>
+
+              <div class="right-arrow">
+                <a href="#" class="btn-arrow">&#x2192;</a>
+                <!-- поправить кнопку -->
+              </div>
+            </div>
+          </div>
+          <a href="../../pages/pets/index.html" class="btn btn-primary"
+            >Get to know the rest</a
+          >
+        </div>
+      </section>
+      <!-- секция как вы можете нам помочь -->
+      <section class="help-content" id="help">
+        <div class="help-content-wrapper wrapper">
+          <h2 class="title">How you can help<br />our shelter</h2>
+          <div class="wish-list-grid">
+            <div class="grid-row-1">
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-pet-food.svg"
+                  alt="Food packaging icon"
+                />
+                <h3>Pet food</h3>
+              </div>
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-transportation.svg"
+                  alt="Transportation icon"
+                />
+                <h3>Transportation</h3>
+              </div>
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-toys.svg"
+                  alt="Toys icon"
+                />
+                <h3>Toys</h3>
+              </div>
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-bowls-and-cups.svg"
+                  alt="Bowls and cups icon"
+                />
+                <h3>Bowls and cups</h3>
+              </div>
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-shampoos.svg"
+                  alt="Shampoo icon"
+                />
+                <h3>Shampoos</h3>
+              </div>
+            </div>
+
+            <div class="grid-row-2">
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-vitamins.svg"
+                  alt="Vitamins and tablets icon"
+                />
+                <h3>Vitamins</h3>
+              </div>
+
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-medicines.svg"
+                  alt="Medical syringe icon"
+                />
+                <h3>Medicines</h3>
+              </div>
+
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-collars-leashes.svg"
+                  alt="Collars and leashes icon"
+                />
+                <h3>Collars&nbsp;&#47;&nbsp;leashes</h3>
+              </div>
+
+              <div class="wish-item">
+                <img
+                  width="60"
+                  height="60"
+                  src="../../assets/icons/icon-sleeping-area.svg"
+                  alt="Sleaping house for pet icon"
+                />
+                <h3>Sleeping-areas</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- секция о пожертвованиях -->
+      <section class="donation">
+        <div class="donation-wrapper">
+          <div class="donation-content-wrapper wrapper">
+            <div class="donation-image">
+              <img
+                src="../../assets/images/donation-dog.png"
+                alt=" Cute puppy looks at you"
+              />
+            </div>
+            <div class="donation-content">
+              <h2 class="title">You can also<br />make a donation</h2>
+              <h4 class="donation-subtitle">
+                Name of the bank / Type of bank account
+              </h4>
+              <div class="credit-card-wrap">
+                <img
+                  src="../../assets/icons/credit-card.svg"
+                  alt="Credit card icon"
+                />
+
+                <a href="#" class="btn btn-card"
+                  >8380&nbsp;2880&nbsp;8028&nbsp;8791&nbsp;7435</a
+                >
+              </div>
+              <p>
+                Legal information and lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Maecenas a ipsum at libero sagittis dignissim
+                sed ac diam. Praesent ultrices maximus tortor et vulputate.
+                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contacts">
+      <div class="footer-wrapper">
+        <div class="footer-grid wrapper">
+          <h3 class="title">For questions<br />and suggestions</h3>
+
+          <div class="email-data data-wrapper">
+            <img src="../../assets/icons/icon-email.svg" alt="Email logo" />
+            <a href="mailto:email@shelter.com">email@shelter.com</a>
+          </div>
+
+          <div class="phone-data data-wrapper">
+            <img src="../../assets/icons/phone.svg" alt="Phone logo" />
+            <a href="tel:+136745677554">+13 674 567 75 54</a>
+          </div>
+
+          <h3 class="title">We are waiting<br />for your visit</h3>
+          <div class="address-data-1 data-wrapper">
+            <img
+              src="../../assets/icons/icon-marker.svg"
+              alt="Icon of location"
+            />
+            <a
+              href="https://www.google.com/maps?ll=55.836360,37.447503"
+              target="_blank"
+              >1 Central Street, Boston<br />(entrance from the store)</a
+            >
+          </div>
+
+          <div class="adsress-data-2 data-wrapper">
+            <img
+              src="../../assets/icons/icon-marker.svg"
+              alt="Icon of location"
+            />
+            <a
+              href="https://www.google.com/maps?ll=55.836360,37.447503"
+              target="_blank"
+              >18 South Park, London</a
+            >
+          </div>
+          <img
+            class="footer-image"
+            src="../../assets/images/footer-puppy.png"
+            alt="Cute puppy licks the screen"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
