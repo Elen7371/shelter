@@ -56,6 +56,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -71,7 +72,6 @@ body {
   line-height: 24px;
   font-weight: 400;
   color: var(--grayDarkXL);
-  scroll-behavior: smooth;
 }
 
 ul {
@@ -167,11 +167,11 @@ img {
 /* настройка баннера главного экрана */
 
 .start-screen {
-  height: 1071px;
+  /* height: 1071px; */
   background: url(../../assets/images/start-screen-gradient-background.jpg)
     no-repeat center;
   background-size: cover;
-  padding-top: 343px;
+  padding-top: 180px;
 }
 
 .banner-subtitle {
