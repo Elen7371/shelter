@@ -63,6 +63,7 @@ html {
 *::after,
 *::before {
   box-sizing: inherit;
+  outline: 0;
 }
 
 body {

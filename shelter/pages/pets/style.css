@@ -64,6 +64,8 @@ html {
 *::after,
 *::before {
   box-sizing: inherit;
+  outline: none;
+  outline-offset: 0;
 }
 
 body {
@@ -293,6 +295,12 @@ img {
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--peachLight);
+  border: none;
+  transition: 1s;
 }
 
 .btn-round:hover {
