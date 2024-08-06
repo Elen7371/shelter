@@ -1,4 +1,4 @@
-/* подключение шрифтов */
+/* FONTS -ON*/
 
 @font-face {
   font-family: "Georgia";
@@ -28,11 +28,9 @@
   src: url(../../assets/fonts/arial_bolditalicmt.ttf);
 }
 
-/* подключение цветовых стилей */
+/* COLOR STYLE -ON */
 
 :root {
-  font-size: 15px;
-
   --peachPrimary: #f1cdb3;
   --peachLight: #fddcc4;
 
@@ -52,7 +50,7 @@
   --footer-gradient: radial-gradient(#513d2f, #1a1a1c);
 }
 
-/* Общие свойства */
+/* GENERAL PROPERTIES */
 
 html {
   box-sizing: border-box;
@@ -62,8 +60,11 @@ html {
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
   outline: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 body {
@@ -73,10 +74,8 @@ body {
   line-height: 24px;
   font-weight: 400;
   color: var(--grayDarkXL);
-}
-
-ul {
-  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -84,12 +83,48 @@ img {
   height: auto;
 }
 
-/* настройка header */
+h2 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  text-decoration: none;
+}
+
+h3,
+.data-wrapper {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.title {
+  font-size: 35px;
+  line-height: 46px;
+}
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.btn {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  letter-spacing: 0.06em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SECTION HEADER */
 
 .header {
   position: absolute;
@@ -98,12 +133,18 @@ img {
   width: 100%;
 }
 
+.header-logo > li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .header-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   padding-top: 30px;
+  margin: 0;
 }
 
 .header-list {
@@ -112,40 +153,46 @@ img {
 }
 
 .header-item {
-  margin-right: 47px;
+  margin-right: 35px;
+  height: 25px;
 }
 
 .header-item:last-child {
   margin-right: 0;
 }
 
-.header-logo {
-  padding-left: 0;
-}
-
 .header-logo-title {
   font-family: "Georgia";
   font-size: 32px;
-  line-height: 35px;
-  letter-spacing: 0.05em;
+  line-height: 34px;
+  letter-spacing: 0.06em;
   color: var(--peachPrimary);
-  text-decoration: none;
-  padding-left: 0;
+  margin-bottom: 6.5px;
+}
+
+.header-logo-title:hover {
+  color: var(--peachLight);
 }
 
 .header-logo-subtitle {
   font-family: "Arial";
   font-size: 13px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.113em;
   color: var(--whiteLightXL);
   text-decoration: none;
+  padding-left: 2px;
+}
+
+.header-logo-subtitle:hover {
+  color: var(--peachLight);
 }
 
 .header-link {
   color: var(--grayDarkS);
+  font-size: 15px;
+  letter-spacing: 0.017em;
   text-decoration: none;
-  height: 24px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
 }
 
 .header-link:active {
@@ -155,7 +202,6 @@ img {
 
 .header-link:hover {
   color: var(--grayLightS);
-  height: 24px;
   text-decoration: none;
 }
 
@@ -165,10 +211,15 @@ img {
   pointer-events: none;
 }
 
-/* настройка баннера главного экрана */
+.header-list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 13.5px 0 19.5px 0;
+}
+
+/* SECTION MAIN-SCREEN */
 
 .start-screen {
-  /* height: 1071px; */
   background: url(../../assets/images/start-screen-gradient-background.jpg)
     no-repeat center;
   background-size: cover;
@@ -182,28 +233,21 @@ img {
   line-height: 57px;
   font-weight: 400;
   color: var(--whiteLightXL);
-  margin: 0 0 42px 0;
+  margin: 20px 0 40px 0;
   max-width: 310px;
 }
 
 .banner-story {
   margin: 0 0 42px 0;
   max-width: 460px;
+  letter-spacing: 0.001em;
   color: var(--grayDarkS);
 }
 
 .btn-primary {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 400;
-  color: var(--grayDark3XL);
-  margin: 0 auto;
   background-color: var(--peachPrimary);
-  padding: 16px 52px;
+  padding: 15px 45px;
   border-radius: 100px;
-  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -220,12 +264,7 @@ img {
   margin: 0 auto;
 }
 
-.header-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* секция about */
+/* SECTION ABOUT */
 
 .about-wrapper {
   display: flex;
@@ -234,18 +273,11 @@ img {
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 90px 0;
+  padding: 80px 0 100px 0;
 }
 
-.title {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 35px;
-  line-height: 46px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--grayDarkL);
-  margin: 0;
+.about-image {
+  display: flex;
 }
 
 .about-content {
@@ -258,7 +290,7 @@ img {
   margin-bottom: 0;
 }
 
-/* секция о животных в поиске дома */
+/* SECTION OUR-FRIENDS */
 
 .pets-content-wrapper {
   background-color: var(--grayLightL);
@@ -266,6 +298,7 @@ img {
   justify-content: center;
   text-align: center;
 }
+
 .offers-pets-wrapper {
   max-width: 1200px;
   justify-content: center;
@@ -274,58 +307,52 @@ img {
 }
 
 .pets-content-title {
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding: 80px 0 60px 0;
 }
 
 .slider {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.about-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  padding: 90px 0;
+.pets-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 270px);
+  text-align: center;
+  column-gap: 90px;
+  margin: 0 52px;
 }
 
 .pet-card {
   background-color: var(--grayLightS);
   height: 435px;
+  width: 270px;
+  text-align: center;
 }
 
 .btn-arrow {
-  padding: 12.5px 14px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 20px;
-  line-height: 23px;
-  font-weight: 400;
-  color: var(--grayDark3XL);
+  display: flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
 }
 
 .btn-arrow:hover {
+  border: 2px solid var(--peachLight);
   background-color: var(--peachLight);
-  border: none;
   transition: 1s;
 }
 
 .btn-secondary {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 400;
-  color: var(--grayDark3XL);
-  margin: 0 auto;
-  padding: 16px 52px;
+  display: inline-block;
+  align-content: center;
+  width: 187px;
+  height: 50px;
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
@@ -333,19 +360,14 @@ img {
 
 .btn-secondary:hover {
   background-color: var(--peachLight);
-  border: none;
+  border: 2px solid var(--peachLight);
   transition: 1s;
 }
 
 .pet-name {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  padding: 20px 0;
-  margin: 0 0 30px 0;
+  padding: 20px 0 30px 0;
+  margin: 0 auto;
 }
 
 .slider {
@@ -374,7 +396,7 @@ img {
   inset: 0;
 }
 
-/* секция о помощи */
+/* SECTION HELP */
 
 .help-content-wrapper {
   position: relative;
@@ -384,7 +406,6 @@ img {
 }
 
 .grid-row-1 {
-  max-width: 113px;
   display: grid;
   grid-template-columns: 83px 150px 60px 154px 101px;
   text-align: center;
@@ -394,55 +415,59 @@ img {
 }
 
 .grid-row-2 {
-  max-width: 113px;
   display: grid;
   grid-template-columns: 89px 101px 165px 147px;
   text-align: center;
   column-gap: 120px;
-  margin-left: 190px;
-  padding-bottom: 90px;
+  margin-left: 172px;
+  padding-bottom: 100px;
 }
 
 .wish-item > h3 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 20px;
-  line-height: 23px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  margin: 30px 0 0 0;
+  margin: 22px 0 0 0;
 }
 
 .help-content-wrapper > h2 {
-  padding-top: 90px;
+  padding-top: 80px;
   padding-bottom: 60px;
   text-align: center;
 }
 
-/* секция donation */
+/* SECTION DONATION */
 
 .donation-wrapper {
   background-color: var(--grayLightL);
   background-size: 100%;
-  padding: 90px 0;
+  padding: 80px 0 100px 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .donation-content-wrapper {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   justify-content: center;
+}
+
+.btn-card:hover {
+  background-color: var(--peachLight);
 }
 
 .donation-content > h4 {
   font-family: "Georgia";
   font-style: normal;
   font-size: 15px;
-  line-height: 17px;
+  line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  margin: 20px 0;
+  margin: 17px 0 17px 0;
+}
+
+.donation-image {
+  display: flex;
 }
 
 .credit-card-wrap {
@@ -452,13 +477,11 @@ img {
   padding: 10px 15px;
 }
 
+.credit-card-wrap:hover {
+  background-color: var(--peachLight);
+}
+
 .credit-card-wrap > a {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 20px;
-  line-height: 23px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
   color: var(--grayDarkL);
   margin-left: 15px;
   text-decoration: none;
@@ -471,7 +494,8 @@ img {
   line-height: 18px;
   font-weight: 400;
   color: var(--grayDarkM);
-  margin-top: 20px;
+  margin-top: 21px;
+  margin-bottom: 0px;
   max-width: 380px;
 }
 
@@ -479,7 +503,7 @@ img {
   margin-left: 30px;
 }
 
-/* секция footer */
+/* SECTION FOOTER */
 
 .footer-wrapper {
   background: url(../../assets/images/footer-gradient-background.jpg) no-repeat
@@ -507,8 +531,14 @@ img {
   grid-row: span 3;
 }
 
+.title-footer {
+  color: var(--whiteLightXL);
+  margin: 16px 0 0 0;
+}
+
 .data-wrapper {
   display: inline-flex;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -519,22 +549,12 @@ img {
 }
 
 .data-wrapper > a {
-  margin: 0;
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 20px;
-  line-height: 23px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
   color: var(--peachPrimary);
   text-decoration: none;
 }
 
-/* доработать стили почистить h3 по тексту*/
-
-.footer-grid > h3 {
-  color: var(--whiteLightXL);
-  margin: 16px 0 0 0;
+.data-wrapper > a:hover {
+  color: var(--peachLight);
 }
 
 .phone-data,

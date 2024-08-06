@@ -31,8 +31,6 @@
 /* подключение цветовых стилей */
 
 :root {
-  font-size: 15px;
-
   --peachPrimary: #f1cdb3;
   --peachLight: #fddcc4;
 
@@ -52,20 +50,21 @@
   --footer-gradient: radial-gradient(#513d2f, #1a1a1c);
 }
 
-/* Общие свойства */
+/* GENERAL PROPERTIES */
 
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  color: var(--grayDarkL);
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
-  outline: none;
-  outline-offset: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 body {
@@ -74,10 +73,9 @@ body {
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
-}
-
-ul {
-  list-style-type: none;
+  color: var(--grayDarkXL);
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -85,46 +83,54 @@ img {
   height: auto;
 }
 
-/* настройка header */
+h2 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--grayDarkL);
+  text-decoration: none;
+}
+
+h3,
+.data-wrapper {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.title {
+  font-size: 35px;
+  line-height: 46px;
+}
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.btn {
+  font-family: "Georgia";
+  font-style: normal;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--grayDark3XL);
+  letter-spacing: 0.06em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SECTION HEADER */
+
 .header {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  /* width: 100%; */
   background-color: var(--whiteLightXL);
   background-size: 100%;
-  padding: 30px 0;
-}
-
-.header-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
   height: 60px;
-}
-
-.header-logo-wrapper {
-  padding: 0;
-}
-
-.header-list {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.header-item {
-  margin: 0 47px 0 0;
-}
-
-.header-item:last-child {
-  margin-right: 0;
+  padding: 30px 0;
 }
 
 .header-logo-title {
@@ -133,23 +139,69 @@ img {
   line-height: 35px;
   letter-spacing: 0.05em;
   color: var(--grayDarkL);
-  text-decoration: none;
+  padding-top: 1px;
+}
+
+.header-logo-title:hover {
+  color: var(--peachPrimary);
 }
 
 .header-logo-subtitle {
   font-family: "Arial";
   font-size: 13px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.113em;
   color: var(--grayDark3XL);
-  text-decoration: none;
-  padding-top: 5px;
+}
+
+.header-logo-subtitle:hover {
+  color: var(--peachPrimary);
+}
+
+.header-logo-wrapper > li {
+  padding: 0;
+}
+
+.header-logo-wrapper > li:last-child {
+  margin: 0;
+  padding: 5px 0 0 0;
+}
+
+.header-logo > li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-item {
+  letter-spacing: 0.006em;
+  margin-right: 37px;
+  padding-bottom: 3px;
+}
+
+.header-item:last-child {
+  margin-right: 0;
 }
 
 .header-link {
   color: var(--grayDarkL);
-  text-decoration: none;
   margin: 0 auto;
-  padding-bottom: 5px;
 }
 
 .header-link:active {
@@ -159,7 +211,6 @@ img {
 
 .header-link:hover {
   color: var(--grayDark3XL);
-  text-decoration: none;
 }
 
 .header-item > .disabled {
@@ -168,44 +219,8 @@ img {
   pointer-events: none;
 }
 
-/*  секция pets-about*/
+/*  SECTION PETS-ABOUT*/
 
-.btn-primary {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 400;
-  color: var(--grayDark3XL);
-  margin: 0 auto;
-  background-color: var(--peachPrimary);
-  padding: 16px 52px;
-  border-radius: 100px;
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background-color: var(--peachLight);
-  transition: 1s;
-}
-
-.header-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* секция о животных в поиске дома */
-
-.title {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 35px;
-  line-height: 46px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--grayDarkL);
-  margin: 0;
-}
 .pets-content-wrapper {
   background-color: var(--grayLightL);
   background-size: 100%;
@@ -226,20 +241,29 @@ img {
 }
 
 .pets-content-title {
-  padding: 80px 0 45px 0;
+  padding: 80px 0 59px 0;
+
+  /* а нужно 60 */
 }
 
 .pet-card {
   background-color: var(--grayLightS);
   height: 435px;
 }
+
+/* добавить скругление углов в самой карточке */
+
 /* кнопки пагинации */
 
 .pagination-wrapper {
-  padding: 45px 0 100px 0;
+  padding: 60px 0 96px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pagination-wrapper > .btn-round:last-child {
+  margin-right: 0;
 }
 
 .btn-round {
@@ -284,14 +308,10 @@ img {
 }
 
 .btn-secondary {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 400;
-  color: var(--grayDark3XL);
-  margin: 0 auto;
-  padding: 16px 52px;
+  display: inline-block;
+  align-content: center;
+  width: 187px;
+  height: 50px;
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
@@ -316,8 +336,8 @@ img {
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  padding: 20px 0;
-  margin: 0 0 30px 0;
+  padding: 0px 0;
+  margin: 22px 0 30px 0;
 }
 
 .btn-primary {
@@ -351,6 +371,7 @@ img {
 
 .footer-wrapper {
   position: relative;
+  padding: 40px 0 0 0;
 }
 
 .footer-grid {
@@ -362,15 +383,22 @@ img {
   width: 1200px;
   column-gap: 160px;
   row-gap: 32px;
-  padding-top: 40px;
 }
 
 .footer-image {
   grid-row: span 3;
 }
 
+.footer-grid > h2 {
+  color: var(--whiteLightXL);
+  margin: 16px 0 0 0;
+}
+
+/* разобраться почему цвета перебиваются через body */
+
 .data-wrapper {
   display: inline-flex;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -381,25 +409,24 @@ img {
 }
 
 .data-wrapper > a {
-  margin: 0;
+  color: var(--peachPrimary);
+  text-decoration: none;
+}
+
+.data-wrapper > a:hover {
+  color: var(--peachLight);
+}
+
+.phone-data,
+.adsress-data-2 {
+  padding-bottom: 60px;
+}
+
+.data-wrapper {
   font-family: "Georgia";
   font-style: normal;
   font-size: 20px;
   line-height: 23px;
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: var(--peachPrimary);
-  text-decoration: none;
-}
-
-/* доработать стили почистить h3 по тексту*/
-
-.footer-grid > h3 {
-  color: var(--whiteLightXL);
-  margin: 16px 0 0 0;
-}
-
-.phone-data,
-.adsress-data-2 {
-  padding-bottom: 60px;
 }
