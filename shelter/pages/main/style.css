@@ -112,20 +112,6 @@ h3,
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    max-width: 708px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 320px) {
-  .wrapper {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-}
-
 .btn {
   font-family: "Georgia";
   font-style: normal;
@@ -311,7 +297,7 @@ h3,
     width: 505px;
   }
 
-  /* section HEADER-768 */
+  /* section FOOTER-768 */
 
   div.footer-wrapper {
     position: relative;

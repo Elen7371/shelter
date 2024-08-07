@@ -130,7 +130,7 @@ h3,
   background-color: var(--whiteLightXL);
   background-size: 100%;
   height: 60px;
-  padding: 30px 0;
+  padding: 30px;
 }
 
 .header-logo-title {
@@ -166,9 +166,11 @@ h3,
   padding: 5px 0 0 0;
 }
 
-.header-logo > li {
+.header-logo > li > a {
   display: flex;
   flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
 .header-wrapper {
@@ -176,7 +178,95 @@ h3,
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+  margin: 0;
+  height: 60px;
 }
+
+@media screen and (max-width: 1260px) and (min-width: 750px) {
+  /* GENERAL-768 */
+
+  .wrapper {
+    margin: 0 30px;
+  }
+
+  /* section HEADER-768 */
+
+  .header-wrapper {
+    margin: 0;
+  }
+
+  li.header-item {
+    margin-right: 35px;
+  }
+
+  .header-item > a {
+    letter-spacing: 0.015em;
+  }
+
+  li.header-item:last-child {
+    margin-right: 0px;
+  }
+
+  /* section OUR-PETS-768 */
+
+  h2.pets-content-title {
+    padding: 80px 0 28px 0;
+  }
+
+  div.offers-pets-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 270px);
+    grid-template-rows: repeat(3, 435px);
+    row-gap: 30px;
+    column-gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    /* проверить можно ли пользоваться hidden */
+  }
+  .hidden {
+    display: none;
+  }
+
+  /* PAGINATION */
+
+  div.pagination-wrapper {
+    padding: 40px 0 76px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* section FOOTER-768 */
+
+  div.footer-wrapper {
+    position: relative;
+    padding: 30px 0 0 0;
+  }
+
+  div.footer-grid {
+    grid-template-columns: 280px 300px;
+    grid-template-rows: auto auto auto;
+    column-gap: 60px;
+    row-gap: 31px;
+    margin: 0 auto;
+    width: 640px;
+    padding-bottom: 316px;
+  }
+
+  .footer-grid > h2.title {
+    margin: 0;
+  }
+
+  .footer-image {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+  }
+}
+
+/* finish ADAPTIVE-768 */
 
 .header-list {
   display: flex;
@@ -232,9 +322,6 @@ h3,
   display: grid;
   grid-template-columns: repeat(4, 270px);
   grid-template-rows: repeat(2, 435px);
-  row-gap: 30px;
-  column-gap: 40px;
-  /* max-width: 1200px; */
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -267,8 +354,8 @@ h3,
 }
 
 .btn-round {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   font-family: "Georgia";
   font-style: normal;
   font-size: 20px;
@@ -299,19 +386,23 @@ h3,
   border: 2px solid var(--peachPrimary);
 }
 
+.here {
+  border: 2px solid var(--peachPrimary);
+}
+
 .btn-round > a {
   text-decoration: none;
   color: inherit;
   background-color: inherit;
-  border: none;
+  border: 2px;
   text-align: center;
 }
 
 .btn-secondary {
   display: inline-block;
   align-content: center;
-  width: 187px;
-  height: 50px;
+  width: 183px;
+  height: 48px;
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
@@ -319,13 +410,13 @@ h3,
 
 .btn-secondary:hover {
   background-color: var(--peachLight);
-  border: none;
+  border: 2px solid var(--peachLight);
   transition: 1s;
 }
 
 .btn-round:hover {
   background-color: var(--peachLight);
-  border: none;
+  border: 2px solid var(--peachLight);
   transition: 1s;
 }
 
@@ -394,8 +485,6 @@ h3,
   margin: 16px 0 0 0;
 }
 
-/* разобраться почему цвета перебиваются через body */
-
 .data-wrapper {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -420,13 +509,4 @@ h3,
 .phone-data,
 .adsress-data-2 {
   padding-bottom: 60px;
-}
-
-.data-wrapper {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 20px;
-  line-height: 23px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
 }
