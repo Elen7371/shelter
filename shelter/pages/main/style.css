@@ -112,6 +112,20 @@ h3,
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 708px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
 .btn {
   font-family: "Georgia";
   font-style: normal;
@@ -133,9 +147,19 @@ h3,
   width: 100%;
 }
 
-.header-logo > li {
+.header-logo {
+  height: 60px;
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-logo > li > a {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
 .header-wrapper {
@@ -143,8 +167,178 @@ h3,
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
-  margin: 0;
+  padding: 30px 0;
+  height: 60px;
+}
+
+@media screen and (max-width: 1260px) and (min-width: 750px) {
+  /* GENERAL-768 */
+
+  .wrapper {
+    margin: 0 30px;
+  }
+
+  /* section HEADER-768 */
+
+  .header-wrapper {
+    margin: 0;
+  }
+
+  li.header-item {
+    margin-right: 35px;
+  }
+
+  .header-item > a {
+    letter-spacing: 0.015em;
+  }
+
+  li.header-item:last-child {
+    margin-right: 0px;
+  }
+
+  /* section BANNER-768 */
+
+  section.start-screen {
+    background: url(../../assets/images/start-screen-gradient-background\ 768.png)
+      no-repeat right;
+    background-size: cover;
+    padding: 150px 0 0 0;
+  }
+
+  .banner-content {
+    text-align: center;
+  }
+
+  .start-screen-wrapper {
+    flex-direction: column;
+    min-width: 310px;
+    margin: 20px auto;
+  }
+
+  h1.banner-subtitle,
+  .banner-story {
+    text-align: left;
+    margin: 0 0 44px 0;
+    max-width: 322px;
+  }
+
+  a.btn-primary {
+    margin-bottom: 100px;
+  }
+  .main-banner-image {
+    position: relative;
+    max-width: 569px;
+    margin-left: 140px;
+  }
+
+  /* section ABOUT-768 */
+
+  .about-wrapper {
+    flex-direction: column-reverse;
+    width: 430px;
+    margin: 80px auto 100px auto;
+  }
+
+  .about-content-wrapper,
+  p.about-content,
+  h2.about-content {
+    margin: 0px auto;
+  }
+
+  h2.about-content {
+    padding-bottom: 25px;
+  }
+
+  p.about-content:last-child {
+    padding-top: 25px;
+    letter-spacing: 0.001em;
+  }
+
+  .about-image {
+    margin-top: 78px;
+  }
+  /* section OUR-FRIENDS-768 */
+
+  div.pets-cards-grid {
+    max-width: 580px;
+    max-height: 435px;
+    column-gap: 40px;
+    margin: 0 12px;
+  }
+
+  .pet-card:first-child {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .pet-card:last-child {
+    display: none;
+  }
+
+  /* section HELP-768 */
+
+  .wish-item {
+    width: 170px;
+  }
+
+  div.wish-list-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    column-gap: 60px;
+    row-gap: 55px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin: 0 39px 100px 39px;
+  }
+
+  /* section DONATION-768 */
+
+  .donation-content-wrapper {
+    flex-direction: column-reverse;
+    width: 440px;
+    margin: 0 auto;
+  }
+
+  .donation-content {
+    margin-right: 30px;
+  }
+
+  .donation-image {
+    margin-top: 60px;
+    width: 505px;
+  }
+
+  /* section HEADER-768 */
+
+  div.footer-wrapper {
+    position: relative;
+    padding: 30px 0 0 0;
+  }
+
+  div.footer-grid {
+    grid-template-columns: 280px 300px;
+    grid-template-rows: auto auto auto;
+    column-gap: 60px;
+    row-gap: 31px;
+    margin: 0 auto;
+    width: 640px;
+    padding-bottom: 316px;
+  }
+
+  h2.title-footer {
+    margin: 0;
+  }
+
+  .footer-image {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+  }
+
+  /* FINISH -768 */
 }
 
 .header-list {
@@ -153,7 +347,7 @@ h3,
 }
 
 .header-item {
-  margin-right: 35px;
+  margin-right: 37px;
   height: 25px;
 }
 
@@ -164,10 +358,9 @@ h3,
 .header-logo-title {
   font-family: "Georgia";
   font-size: 32px;
-  line-height: 34px;
+  line-height: 36px;
   letter-spacing: 0.06em;
   color: var(--peachPrimary);
-  margin-bottom: 6.5px;
 }
 
 .header-logo-title:hover {
@@ -177,10 +370,9 @@ h3,
 .header-logo-subtitle {
   font-family: "Arial";
   font-size: 13px;
-  letter-spacing: 0.113em;
+  line-height: 14px;
+  letter-spacing: 0.106em;
   color: var(--whiteLightXL);
-  text-decoration: none;
-  padding-left: 2px;
 }
 
 .header-logo-subtitle:hover {
@@ -190,7 +382,8 @@ h3,
 .header-link {
   color: var(--grayDarkS);
   font-size: 15px;
-  letter-spacing: 0.017em;
+  line-height: 15px;
+  letter-spacing: 0.006em;
   text-decoration: none;
   padding-bottom: 4px;
 }
@@ -214,7 +407,7 @@ h3,
 .header-list {
   display: flex;
   flex-wrap: nowrap;
-  margin: 13.5px 0 19.5px 0;
+  margin: 14px 0 18px 0;
 }
 
 /* SECTION MAIN-SCREEN */
@@ -230,7 +423,8 @@ h3,
   font-family: "Georgia";
   font-style: normal;
   font-size: 44px;
-  line-height: 57px;
+  line-height: 56px;
+  letter-spacing: 0.001;
   font-weight: 400;
   color: var(--whiteLightXL);
   margin: 20px 0 40px 0;
@@ -240,14 +434,16 @@ h3,
 .banner-story {
   margin: 0 0 42px 0;
   max-width: 460px;
-  letter-spacing: 0.001em;
+  text-align: justify;
   color: var(--grayDarkS);
 }
 
 .btn-primary {
+  display: inline-block;
   background-color: var(--peachPrimary);
   padding: 15px 45px;
   border-radius: 100px;
+  margin-bottom: 98px;
 }
 
 .btn-primary:hover {
@@ -314,6 +510,8 @@ h3,
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-bottom: 60px;
 }
 
 .pets-cards-grid {
@@ -333,8 +531,8 @@ h3,
 
 .btn-arrow {
   display: flex;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
@@ -351,8 +549,8 @@ h3,
 .btn-secondary {
   display: inline-block;
   align-content: center;
-  width: 187px;
-  height: 50px;
+  width: 182px;
+  height: 48px;
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
@@ -368,16 +566,6 @@ h3,
   color: var(--grayDarkL);
   padding: 20px 0 30px 0;
   margin: 0 auto;
-}
-
-.slider {
-  position: relative;
-  margin-bottom: 60px;
-}
-
-.btn-primary {
-  display: inline-block;
-  margin-bottom: 98px;
 }
 
 /* растягиваем ссылку на всю карточку блок our-friens + help/donation + footer */
@@ -405,22 +593,15 @@ h3,
   justify-content: center;
 }
 
-.grid-row-1 {
-  display: grid;
-  grid-template-columns: 83px 150px 60px 154px 101px;
-  text-align: center;
+.wish-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
   column-gap: 120px;
-  margin-bottom: 55px;
-  margin-left: 87px;
-}
-
-.grid-row-2 {
-  display: grid;
-  grid-template-columns: 89px 101px 165px 147px;
+  row-gap: 55px;
   text-align: center;
-  column-gap: 120px;
-  margin-left: 172px;
-  padding-bottom: 100px;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .wish-item > h3 {
@@ -472,6 +653,7 @@ h3,
 
 .credit-card-wrap {
   display: inline-flex;
+  /* min-width: 349px; */
   border-radius: 9px;
   background-color: var(--peachPrimary);
   padding: 10px 15px;
