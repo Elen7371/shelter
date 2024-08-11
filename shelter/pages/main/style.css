@@ -133,9 +133,19 @@ h3,
   width: 100%;
 }
 
-.header-logo > li {
+.header-logo {
+  height: 60px;
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-logo > li > a {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
 .header-wrapper {
@@ -143,8 +153,8 @@ h3,
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
-  margin: 0;
+  padding: 30px 0;
+  height: 60px;
 }
 
 .header-list {
@@ -153,21 +163,20 @@ h3,
 }
 
 .header-item {
-  margin-right: 35px;
+  margin-right: 37px;
   height: 25px;
 }
 
-.header-item:last-child {
-  margin-right: 0;
+.header-item:nth-child(4) {
+  margin: 0;
 }
 
 .header-logo-title {
   font-family: "Georgia";
   font-size: 32px;
-  line-height: 34px;
+  line-height: 36px;
   letter-spacing: 0.06em;
   color: var(--peachPrimary);
-  margin-bottom: 6.5px;
 }
 
 .header-logo-title:hover {
@@ -177,10 +186,9 @@ h3,
 .header-logo-subtitle {
   font-family: "Arial";
   font-size: 13px;
-  letter-spacing: 0.113em;
+  line-height: 14px;
+  letter-spacing: 0.106em;
   color: var(--whiteLightXL);
-  text-decoration: none;
-  padding-left: 2px;
 }
 
 .header-logo-subtitle:hover {
@@ -190,7 +198,8 @@ h3,
 .header-link {
   color: var(--grayDarkS);
   font-size: 15px;
-  letter-spacing: 0.017em;
+  line-height: 15px;
+  letter-spacing: 0.006em;
   text-decoration: none;
   padding-bottom: 4px;
 }
@@ -214,10 +223,14 @@ h3,
 .header-list {
   display: flex;
   flex-wrap: nowrap;
-  margin: 13.5px 0 19.5px 0;
+  margin: 14px 0 18px 0;
 }
 
-/* SECTION MAIN-SCREEN */
+.burger-menu {
+  display: none;
+}
+
+/*   SECTION MAIN-SCREEN / BANNER   */
 
 .start-screen {
   background: url(../../assets/images/start-screen-gradient-background.jpg)
@@ -230,24 +243,33 @@ h3,
   font-family: "Georgia";
   font-style: normal;
   font-size: 44px;
-  line-height: 57px;
+  line-height: 56px;
+  /* letter-spacing: 0.001em; */
   font-weight: 400;
   color: var(--whiteLightXL);
   margin: 20px 0 40px 0;
   max-width: 310px;
 }
 
+.banner-content {
+  padding-right: 40px;
+}
+
 .banner-story {
-  margin: 0 0 42px 0;
-  max-width: 460px;
-  letter-spacing: 0.001em;
+  margin: 0 0 44px 0;
+  min-width: 460px;
+  text-align: justify;
   color: var(--grayDarkS);
 }
 
 .btn-primary {
+  display: inline-block;
   background-color: var(--peachPrimary);
   padding: 15px 45px;
   border-radius: 100px;
+  margin-bottom: 100px;
+
+  /* проверить что не поехало */
 }
 
 .btn-primary:hover {
@@ -271,23 +293,27 @@ h3,
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  padding: 80px 215px 100px;
   margin: 0 auto;
-  padding: 80px 0 100px 0;
 }
 
 .about-image {
   display: flex;
+  min-width: 300px;
 }
 
 .about-content {
-  max-width: 430px;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   margin-left: 120px;
+  /* min-width: 430px; */
+}
+
+.about-content:first-child {
+  margin-top: 14px;
 }
 
 .about-content:last-child {
-  margin-bottom: 0;
+  margin-bottom: 14px;
 }
 
 /* SECTION OUR-FRIENDS */
@@ -312,14 +338,17 @@ h3,
 
 .slider {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  margin: 0px 0 58px 0;
 }
 
 .pets-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 270px);
   text-align: center;
+  justify-content: space-between;
   column-gap: 90px;
   margin: 0 52px;
 }
@@ -333,8 +362,8 @@ h3,
 
 .btn-arrow {
   display: flex;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
@@ -351,8 +380,8 @@ h3,
 .btn-secondary {
   display: inline-block;
   align-content: center;
-  width: 187px;
-  height: 50px;
+  width: 182px;
+  height: 48px;
   border-radius: 100px;
   text-decoration: none;
   border: 2px solid var(--peachPrimary);
@@ -366,18 +395,8 @@ h3,
 
 .pet-name {
   color: var(--grayDarkL);
-  padding: 20px 0 30px 0;
+  padding: 22px 0 32px 0;
   margin: 0 auto;
-}
-
-.slider {
-  position: relative;
-  margin-bottom: 60px;
-}
-
-.btn-primary {
-  display: inline-block;
-  margin-bottom: 98px;
 }
 
 /* растягиваем ссылку на всю карточку блок our-friens + help/donation + footer */
@@ -405,22 +424,15 @@ h3,
   justify-content: center;
 }
 
-.grid-row-1 {
-  display: grid;
-  grid-template-columns: 83px 150px 60px 154px 101px;
-  text-align: center;
+.wish-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
   column-gap: 120px;
-  margin-bottom: 55px;
-  margin-left: 87px;
-}
-
-.grid-row-2 {
-  display: grid;
-  grid-template-columns: 89px 101px 165px 147px;
+  row-gap: 55px;
   text-align: center;
-  column-gap: 120px;
-  margin-left: 172px;
-  padding-bottom: 100px;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .wish-item > h3 {
@@ -439,9 +451,10 @@ h3,
 .donation-wrapper {
   background-color: var(--grayLightL);
   background-size: 100%;
-  padding: 80px 0 100px 0;
   justify-content: center;
   align-items: center;
+  /* margin: 0 auto;
+  padding: 80px 0 100px 0; */
 }
 
 .donation-content-wrapper {
@@ -449,6 +462,9 @@ h3,
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  padding: 80px 182px 100px;
+  max-width: 915px;
 }
 
 .btn-card:hover {
@@ -468,6 +484,7 @@ h3,
 
 .donation-image {
   display: flex;
+  width: 100%;
 }
 
 .credit-card-wrap {
@@ -496,11 +513,11 @@ h3,
   color: var(--grayDarkM);
   margin-top: 21px;
   margin-bottom: 0px;
-  max-width: 380px;
 }
 
 .donation-content {
   margin-left: 30px;
+  max-width: 380px;
 }
 
 /* SECTION FOOTER */
@@ -561,3 +578,498 @@ h3,
 .adsress-data-2 {
   padding-bottom: 60px;
 }
+
+/*   S T A R T   ADAPTIVE-768 */
+
+@media screen and (max-width: 1260px) and (min-width: 768px) {
+  /* section HEADER-768 */
+
+  .header-wrapper {
+    margin: 0 30px;
+  }
+
+  li.header-item {
+    margin-right: 35px;
+  }
+
+  .header-item > a {
+    letter-spacing: 0.015em;
+  }
+
+  li.header-item:last-child {
+    margin-right: 0px;
+  }
+
+  /* section BANNER-768 */
+
+  section.start-screen {
+    background: url(../../assets/images/start-screen-gradient-background\ 768.png)
+      no-repeat right;
+    background-size: cover;
+    padding: 150px 0 0 0;
+  }
+
+  .start-screen-wrapper {
+    padding: 0 100px 0 99px;
+  }
+
+  .banner-content {
+    padding: 0 55px 0 54px;
+  }
+
+  .start-screen-wrapper {
+    flex-direction: column;
+    min-width: 310px;
+    text-align: center;
+  }
+
+  h1.banner-subtitle,
+  .banner-story {
+    text-align: left;
+    margin: 0 0 43px 0;
+    min-width: 322px;
+  }
+
+  a.btn-primary {
+    margin-bottom: 100px;
+  }
+
+  .main-banner-image {
+    position: relative;
+    max-width: 569px;
+    margin-left: 140px;
+  }
+
+  /* section ABOUT-768 */
+
+  .about-wrapper {
+    flex-direction: column-reverse;
+    margin: 0 30px;
+    padding: 80px 135px 100px 136px;
+  }
+
+  .about-content-wrapper,
+  p.about-content,
+  h2.about-content {
+    margin: 0px auto;
+  }
+
+  h2.about-content {
+    margin: 0;
+    padding-bottom: 25px;
+  }
+
+  .about-content:first-child {
+    margin-top: 0px;
+  }
+
+  p.about-content:last-child {
+    padding-top: 25px;
+    margin-bottom: 0;
+    letter-spacing: 0.001em;
+  }
+
+  .about-image {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 78px;
+  }
+  /* section OUR-FRIENDS-768 */
+
+  .offers-pets-wrapper {
+    max-width: none;
+    padding: 0 30px;
+  }
+
+  .slider {
+    margin: 0px 0 58px 0;
+  }
+
+  div.pets-cards-grid {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    margin: 0 auto;
+  }
+
+  .pet-card:first-child {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .pet-card:last-child {
+    display: none;
+  }
+
+  div.left-arrow {
+    margin: 0 12px 0 0;
+  }
+
+  div.right-arrow {
+    margin: 0 0 0 12px;
+  }
+
+  /* section HELP-768 */
+
+  .wish-item {
+    width: 170px;
+  }
+
+  div.wish-list-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    column-gap: 60px;
+    row-gap: 55px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin: 0 39px 100px 39px;
+  }
+
+  /* section DONATION-768 */
+
+  .donation-content-wrapper {
+    flex-direction: column-reverse;
+    width: 440px;
+    margin: 0 auto;
+    padding: 80px 131px 100px 132px;
+    max-width: none;
+  }
+
+  .donation-content {
+    margin-right: 30px;
+    align-items: center;
+  }
+
+  .donation-image {
+    margin-top: 61px;
+    width: 505px;
+  }
+
+  /* section FOOTER-768 */
+
+  div.footer-wrapper {
+    position: relative;
+    padding: 30px 0 0 0;
+  }
+
+  div.footer-grid {
+    grid-template-columns: 280px 300px;
+    grid-template-rows: auto auto auto;
+    column-gap: 60px;
+    row-gap: 31px;
+    margin: 0 auto;
+    width: 640px;
+    padding-bottom: 316px;
+  }
+
+  h2.title-footer {
+    margin: 0;
+  }
+
+  .footer-image {
+    position: absolute;
+    bottom: 0;
+    left: 30.5%;
+  }
+}
+/*   F I N I S H   ADAPTIVE-768 */
+
+/*   S T A R T   ADAPTIVE-320 */
+
+@media screen and (max-width: 767px) {
+  /* GENERAL */
+
+  .wrapper {
+    /* max-width: 320px; */
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  /* section HEADER-320 */
+
+  .header-wrapper {
+    margin: 30px 20px;
+    padding: 0;
+  }
+
+  .header-item {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* section BANNER-320 */
+
+  section.start-screen {
+    padding: 50px 0 0 0;
+  }
+
+  .start-screen-wrapper {
+    padding: 60px 10px 0 10px;
+    flex-direction: column;
+  }
+
+  .banner-content {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  h1.banner-subtitle {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    color: var(--whiteLightXL);
+    /* margin: 40px 0 42px 0; */
+    margin: 40px auto;
+  }
+
+  .banner-story {
+    min-width: 0;
+    text-align: center;
+    color: var(--grayDarkS);
+    min-width: fit-content;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+  }
+
+  .banner-content > .btn-primary {
+    margin-bottom: 106px;
+  }
+
+  img.main-banner-image {
+    display: flex;
+    width: 260px;
+    margin: 0 10px 0 50px;
+  }
+
+  /* section ABOUT-320 */
+
+  .about-wrapper {
+    flex-direction: column-reverse;
+    margin: 0 10px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .about-content-wrapper > h2.about-content {
+    margin: 42px 0 24px;
+  }
+
+  p.about-content {
+    margin: 0 15px 24px;
+    text-align: justify;
+  }
+  .about-content:last-child {
+    padding: 0;
+    margin: 0 15px 40px;
+  }
+  img.banner-image {
+    display: flex;
+    margin: 0 20px 0 20px;
+    width: 260px;
+    margin-bottom: 42px;
+  }
+
+  /* section OUR-FRIENDS-320 */
+
+  h2.pets-content-title {
+    padding: 42px 10px;
+  }
+
+  .pets-cards-grid {
+    margin: 0 25px;
+  }
+
+  .pets-cards-grid > .hidden {
+    display: none;
+  }
+
+  .slider {
+    width: 320px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 435px 52px;
+    row-gap: 20px;
+    align-items: center;
+    margin: 0 0 42px;
+  }
+
+  .offers-pets-wrapper {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .pets-content-wrapper > .btn-primary {
+    margin: 0 0 42px 0;
+  }
+
+  div.pet-card {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  div.left-arrow {
+    margin-left: 27px;
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  div.right-arrow {
+    margin-right: 28px;
+    justify-self: center;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  /* section HELP-320 */
+
+  .help-content-wrapper > h2 {
+    margin: 42px auto;
+    padding: 0;
+  }
+
+  .wish-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+    height: 87px;
+    font-size: 15px;
+  }
+
+  .wish-item > h3 {
+    font-size: 15px;
+    padding-top: 18px;
+    margin-top: 0;
+  }
+
+  .wish-list-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    column-gap: 30px;
+    row-gap: 30px;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0 10px 42px 10px;
+  }
+
+  .wish-item > img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* section DONATION-320 */
+
+  .donation-wrapper {
+    background-color: var(--grayLightL);
+    background-size: 100%;
+    padding: 42px 10px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .donation-content {
+    padding: 0 10px 0 9px;
+    text-align: center;
+    margin: 0 0 42px 0;
+  }
+
+  .donation-content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .credit-card-wrap {
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  .btn-card > h3 {
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 3px;
+    letter-spacing: 0.06em;
+  }
+
+  .donation-content > h4 {
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    margin: 25px auto 22px;
+  }
+
+  .donation-content > p {
+    font-size: 11.5px;
+    text-align: justify;
+  }
+
+  .donation-image > img {
+    min-width: 260px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  /* section FOOTER-320 */
+
+  .footer-wrapper {
+    padding: 30px 0 0 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 300px;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    row-gap: 40px;
+    margin: 0 auto;
+    width: 320px;
+    justify-content: center;
+  }
+
+  .data-wrapper {
+    margin: 0 auto;
+  }
+
+  .phone-data,
+  .adsress-data-2 {
+    padding-bottom: 0;
+  }
+
+  .title-footer {
+    margin: 0;
+    text-align: center;
+  }
+
+  .footer-image {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    width: 260px;
+  }
+
+  .adsress-data-2 {
+    text-align: justify;
+    width: 294px;
+  }
+}
+/*   F I N I S H   ADAPTIVE-320 */
