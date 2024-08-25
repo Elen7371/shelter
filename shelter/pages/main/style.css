@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: "Georgia";
+  font-family: "Georgia bold";
   font-style: italic;
   font-weight: 700;
   src: url(../../assets/fonts/georgia_bolditalic.ttf);
@@ -22,10 +22,10 @@
 }
 
 @font-face {
-  font-family: Arial;
+  font-family: "Arial italic";
   font-style: italic;
-  font-weight: 700;
-  src: url(../../assets/fonts/arial_bolditalicmt.ttf);
+  font-weight: 400;
+  src: url(../../assets/fonts/arial-mt-light-italic.ttf);
 }
 
 /* COLOR STYLE -ON */
@@ -81,6 +81,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 h2 {
@@ -104,7 +105,7 @@ h3,
 
 .title {
   font-size: 35px;
-  line-height: 46px;
+  line-height: 45px;
 }
 
 .wrapper {
@@ -119,7 +120,7 @@ h3,
   line-height: 22px;
   font-weight: 400;
   color: var(--grayDark3XL);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.059em;
   align-items: center;
   justify-content: center;
 }
@@ -243,8 +244,7 @@ h3,
   font-family: "Georgia";
   font-style: normal;
   font-size: 44px;
-  line-height: 56px;
-  /* letter-spacing: 0.001em; */
+  line-height: 57px;
   font-weight: 400;
   color: var(--whiteLightXL);
   margin: 20px 0 40px 0;
@@ -252,11 +252,11 @@ h3,
 }
 
 .banner-content {
-  padding-right: 40px;
+  padding-right: 42px;
 }
 
 .banner-story {
-  margin: 0 0 44px 0;
+  margin: 0 0 42px 0;
   min-width: 460px;
   text-align: justify;
   color: var(--grayDarkS);
@@ -268,8 +268,6 @@ h3,
   padding: 15px 45px;
   border-radius: 100px;
   margin-bottom: 100px;
-
-  /* проверить что не поехало */
 }
 
 .btn-primary:hover {
@@ -295,6 +293,7 @@ h3,
   justify-content: center;
   padding: 80px 215px 100px;
   margin: 0 auto;
+  max-width: 850px;
 }
 
 .about-image {
@@ -303,9 +302,8 @@ h3,
 }
 
 .about-content {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
   margin-left: 120px;
-  /* min-width: 430px; */
 }
 
 .about-content:first-child {
@@ -341,7 +339,7 @@ h3,
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 0px 0 58px 0;
+  margin: 0px 0 60px 0;
 }
 
 .pets-cards-grid {
@@ -358,6 +356,7 @@ h3,
   height: 435px;
   width: 270px;
   text-align: center;
+  border-radius: 9px;
 }
 
 .btn-arrow {
@@ -395,8 +394,10 @@ h3,
 
 .pet-name {
   color: var(--grayDarkL);
-  padding: 22px 0 32px 0;
-  margin: 0 auto;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 0;
+  margin: 30px auto;
 }
 
 /* растягиваем ссылку на всю карточку блок our-friens + help/donation + footer */
@@ -431,13 +432,21 @@ h3,
   column-gap: 120px;
   row-gap: 55px;
   text-align: center;
+  align-items: center;
   justify-content: center;
   margin-bottom: 100px;
 }
 
 .wish-item > h3 {
   color: var(--grayDarkL);
-  margin: 22px 0 0 0;
+  margin: 30px 0 0 0;
+}
+
+.wish-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .help-content-wrapper > h2 {
@@ -453,17 +462,15 @@ h3,
   background-size: 100%;
   justify-content: center;
   align-items: center;
-  /* margin: 0 auto;
-  padding: 80px 0 100px 0; */
+  margin: 0 auto;
 }
 
 .donation-content-wrapper {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
-  padding: 80px 182px 100px;
+  padding: 80px 0 100px 0;
   max-width: 915px;
 }
 
@@ -475,15 +482,20 @@ h3,
   font-family: "Georgia";
   font-style: normal;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 17px;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  margin: 17px 0 17px 0;
+  margin: 20px 0;
 }
 
 .donation-image {
-  display: flex;
+  /* width: 100%; */
+  height: auto;
+  align-content: center;
+}
+
+.donation-image > img {
   width: 100%;
 }
 
@@ -504,20 +516,21 @@ h3,
   text-decoration: none;
 }
 
+.donation-content {
+  margin: 0;
+  justify-content: left;
+  width: 380px;
+}
+
 .donation-content > p {
-  font-family: "Arial";
+  font-family: "Arial italic";
   font-style: italic;
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
   color: var(--grayDarkM);
-  margin-top: 21px;
+  margin-top: 20px;
   margin-bottom: 0px;
-}
-
-.donation-content {
-  margin-left: 30px;
-  max-width: 380px;
 }
 
 /* SECTION FOOTER */
@@ -530,17 +543,18 @@ h3,
 
 .footer-wrapper {
   position: relative;
-  padding: 40px 0 0 0;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 280px 300px 300px;
+  grid-template-columns: 278px 302px 300px;
   grid-template-rows: auto auto auto;
   grid-auto-flow: column;
   grid-column: 4;
-  width: 1200px;
-  column-gap: 160px;
+  padding: 40px 40px 0;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
   row-gap: 32px;
 }
 
@@ -548,9 +562,17 @@ h3,
   grid-row: span 3;
 }
 
-.title-footer {
+div.phone-data > img {
+  width: 40px;
+  height: 32px;
+  display: flex;
+  margin: 0;
+}
+
+.footer-grid > h2 {
   color: var(--whiteLightXL);
-  margin: 16px 0 0 0;
+  padding: 16px 0 2px 0;
+  letter-spacing: 0.059em;
 }
 
 .data-wrapper {
@@ -561,13 +583,19 @@ h3,
 
 .data-wrapper > img {
   height: 32px;
-  width: auto;
   padding-right: 20px;
 }
 
 .data-wrapper > a {
   color: var(--peachPrimary);
   text-decoration: none;
+  line-height: 23px;
+}
+
+.email-data > img,
+.phone-data > img {
+  width: 40px;
+  height: 42px;
 }
 
 .data-wrapper > a:hover {
@@ -575,8 +603,14 @@ h3,
 }
 
 .phone-data,
-.adsress-data-2 {
+.address-data-2 {
   padding-bottom: 60px;
+  height: 32px;
+}
+
+.email-data,
+.address-data-1 {
+  height: 46px;
 }
 
 /*   S T A R T   ADAPTIVE-768 */
@@ -623,10 +657,14 @@ h3,
     text-align: center;
   }
 
-  h1.banner-subtitle,
-  .banner-story {
+  h1.banner-subtitle {
     text-align: left;
-    margin: 0 0 43px 0;
+    margin: 0 0 42px 0;
+    min-width: 322px;
+  }
+
+  .banner-story {
+    margin: 0 0 42px 0;
     min-width: 322px;
   }
 
@@ -645,7 +683,7 @@ h3,
   .about-wrapper {
     flex-direction: column-reverse;
     margin: 0 30px;
-    padding: 80px 135px 100px 136px;
+    padding: 80px 139px 100px 139px;
   }
 
   .about-content-wrapper,
@@ -656,7 +694,7 @@ h3,
 
   h2.about-content {
     margin: 0;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
   }
 
   .about-content:first-child {
@@ -666,13 +704,13 @@ h3,
   p.about-content:last-child {
     padding-top: 25px;
     margin-bottom: 0;
-    letter-spacing: 0.001em;
+    letter-spacing: 0em;
   }
 
   .about-image {
     display: flex;
     margin: 0 auto;
-    margin-top: 78px;
+    margin-top: 80px;
   }
   /* section OUR-FRIENDS-768 */
 
@@ -682,7 +720,7 @@ h3,
   }
 
   .slider {
-    margin: 0px 0 58px 0;
+    margin: 0px 0 60px 0;
   }
 
   div.pets-cards-grid {
@@ -732,40 +770,67 @@ h3,
 
   .donation-content-wrapper {
     flex-direction: column-reverse;
-    width: 440px;
+    min-width: 440px;
     margin: 0 auto;
-    padding: 80px 131px 100px 132px;
+    justify-content: center;
+    padding: 80px 30px 100px;
     max-width: none;
   }
 
   .donation-content {
-    margin-right: 30px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 164px;
+    width: auto;
   }
 
   .donation-image {
-    margin-top: 61px;
-    width: 505px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 60px;
+  }
+  .donation-image > img {
+    margin: 0 auto;
+  }
+
+  .credit-card-wrap {
+    display: inline-flex;
+    width: max-content;
   }
 
   /* section FOOTER-768 */
 
   div.footer-wrapper {
     position: relative;
-    padding: 30px 0 0 0;
   }
 
   div.footer-grid {
-    grid-template-columns: 280px 300px;
+    grid-template-columns: 278px 302px;
     grid-template-rows: auto auto auto;
-    column-gap: 60px;
-    row-gap: 31px;
+    row-gap: 33px;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
-    width: 640px;
-    padding-bottom: 316px;
+    padding: 30px 64px 315px 64px;
   }
 
-  h2.title-footer {
+  .footer-grid > h2 {
+    margin: 0;
+    letter-spacing: 0.059em;
+    padding: 0;
+  }
+  .phone-data,
+  .adsress-data-2 {
+    padding-bottom: 60px;
+  }
+
+  .phone-data > img {
+    width: 40px;
+    height: 32px;
+    display: flex;
     margin: 0;
   }
 
@@ -783,13 +848,13 @@ h3,
   /* GENERAL */
 
   .wrapper {
-    /* max-width: 320px; */
     margin: 0 auto;
   }
 
   .title {
     font-size: 25px;
     line-height: 32px;
+    padding: 42px 0 0 0;
   }
 
   /* section HEADER-320 */
@@ -805,7 +870,7 @@ h3,
 
   .burger-menu {
     display: block;
-    margin-top: 10px;
+    margin-top: 3px;
   }
 
   /* section BANNER-320 */
@@ -830,8 +895,7 @@ h3,
     line-height: 32px;
     letter-spacing: 0.06em;
     color: var(--whiteLightXL);
-    /* margin: 40px 0 42px 0; */
-    margin: 40px auto;
+    margin: 40px auto 42px;
   }
 
   .banner-story {
@@ -863,28 +927,32 @@ h3,
   }
 
   .about-content-wrapper > h2.about-content {
-    margin: 42px 0 24px;
+    margin: 0 25px;
+    padding: 42px 0 25px;
   }
 
   p.about-content {
-    margin: 0 15px 24px;
+    margin: 0 15px 22px;
     text-align: justify;
-  }
-  .about-content:last-child {
     padding: 0;
-    margin: 0 15px 40px;
   }
+
+  .about-content:last-child {
+    margin-bottom: 41px;
+  }
+
+  /* где-то во втором абзаце потерялся 1 px */
+
   img.banner-image {
     display: flex;
-    margin: 0 20px 0 20px;
+    margin: 0 20px 42px 20px;
     width: 260px;
-    margin-bottom: 42px;
   }
 
   /* section OUR-FRIENDS-320 */
 
   h2.pets-content-title {
-    padding: 42px 10px;
+    padding: 42px 10px 42px;
   }
 
   .pets-cards-grid {
@@ -957,7 +1025,7 @@ h3,
 
   .wish-item > h3 {
     font-size: 15px;
-    padding-top: 18px;
+    padding-top: 17px;
     margin-top: 0;
   }
 
@@ -969,7 +1037,7 @@ h3,
     row-gap: 30px;
     text-align: center;
     justify-content: space-between;
-    margin: 0 10px 42px 10px;
+    margin: 0 15px 42px 15px;
   }
 
   .wish-item > img {
@@ -982,15 +1050,15 @@ h3,
   .donation-wrapper {
     background-color: var(--grayLightL);
     background-size: 100%;
-    padding: 42px 10px;
+    padding: 0 20px;
     text-align: center;
     margin: 0 auto;
   }
 
   .donation-content {
-    padding: 0 10px 0 9px;
     text-align: center;
-    margin: 0 0 42px 0;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .donation-content-wrapper {
@@ -1002,48 +1070,70 @@ h3,
   }
 
   .credit-card-wrap {
+    margin: 0 auto;
     padding: 10px 15px;
+    width: max-content;
     text-align: center;
   }
 
   .btn-card > h3 {
     font-size: 15px;
     line-height: 18px;
-    margin-top: 3px;
+    margin: 3px 0 0 0;
     letter-spacing: 0.06em;
+  }
+
+  .donation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
   }
 
   .donation-content > h4 {
     font-size: 15px;
-    line-height: 17px;
+    line-height: 24px;
     letter-spacing: 0em;
-    margin: 25px auto 22px;
+    margin: 20px auto;
   }
 
   .donation-content > p {
-    font-size: 11.5px;
+    font-family: "Arial";
+    font-size: 12px;
+    line-height: 18px;
     text-align: justify;
   }
 
-  .donation-image > img {
-    min-width: 260px;
-    padding: 0 20px;
+  .donation-image {
+    display: flex;
     margin: 0 auto;
+    width: auto;
+  }
+
+  div.donation-image > img {
+    min-width: 260px;
+    min-height: 135.2px;
+    margin: 42px 10px;
   }
 
   /* section FOOTER-320 */
 
+  .footer-wrapper > .wrapper {
+    padding: 30px 10px 0;
+  }
+
   .footer-wrapper {
-    padding: 30px 0 0 0;
+    padding: 0;
   }
 
   .footer-grid {
+    display: grid;
     grid-template-columns: 300px;
     grid-template-rows: auto auto auto auto auto auto auto auto auto;
     row-gap: 40px;
-    margin: 0 auto;
-    width: 320px;
     justify-content: center;
+    padding-top: 30px;
+    margin: 0 auto;
   }
 
   .data-wrapper {
@@ -1051,12 +1141,37 @@ h3,
   }
 
   .phone-data,
-  .adsress-data-2 {
+  .address-data-2 {
     padding-bottom: 0;
   }
 
-  .title-footer {
+  .address-data-2 {
+    padding-right: 30px;
+  }
+
+  .address-data-1 {
+    padding-right: 5px;
+  }
+
+  .email-data > img,
+  .phone-data > img {
+    width: 40px;
+    height: 32px;
+    display: flex;
     margin: 0;
+  }
+
+  .email-data {
+    height: 32px;
+  }
+
+  .address-data-1 {
+    height: 46px;
+  }
+
+  .footer-grid > h2.title {
+    margin: 0;
+    padding: 0 20px;
     text-align: center;
   }
 
@@ -1069,7 +1184,7 @@ h3,
 
   .adsress-data-2 {
     text-align: justify;
-    width: 294px;
+    width: 300px;
   }
 }
 /*   F I N I S H   ADAPTIVE-320 */
