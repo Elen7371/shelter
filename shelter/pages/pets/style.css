@@ -344,7 +344,7 @@ h2.pets-content-title {
   line-height: 23px;
   font-weight: 400;
   color: var(--grayDarkL);
-  padding: 0px 0;
+  padding: 0;
   margin: 30px auto;
 }
 
@@ -637,7 +637,7 @@ div.phone-data > img {
   }
 
   .phone-data,
-  .adsress-data-2 {
+  .address-data-2 {
     padding-bottom: 0;
   }
 
