@@ -1,4 +1,4 @@
-/* подключение шрифтов */
+/* FONTS -ON */
 
 @font-face {
   font-family: "Georgia";
@@ -28,7 +28,7 @@
   src: url(../../assets/fonts/arial_bolditalicmt.ttf);
 }
 
-/* подключение цветовых стилей */
+/* COLOR-STYLE -ON */
 
 :root {
   --peachPrimary: #f1cdb3;
@@ -81,6 +81,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 h2 {
@@ -104,11 +105,12 @@ h3,
 
 .title {
   font-size: 35px;
-  line-height: 46px;
+  line-height: 45px;
 }
 
 .wrapper {
   max-width: 1200px;
+  padding: 0 40px;
   margin: 0 auto;
 }
 
@@ -128,30 +130,25 @@ h3,
 
 .header {
   background-color: var(--whiteLightXL);
-  /* background-size: 100%;
-  height: 60px;
-  padding: 30px; */
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-.header-logo {
+.header-logo-wrapper {
   height: 60px;
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
+  column-gap: 10px;
   justify-content: space-between;
 }
 
 .header-logo-title {
   font-family: "Georgia";
   font-size: 32px;
-  line-height: 35px;
-  letter-spacing: 0.05em;
+  line-height: 36px;
+  letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  padding-top: 1px;
   white-space: nowrap;
 }
 
@@ -162,21 +159,14 @@ h3,
 .header-logo-subtitle {
   font-family: "Arial";
   font-size: 13px;
-  letter-spacing: 0.113em;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  text-align: justify;
   color: var(--grayDark3XL);
 }
 
 .header-logo-subtitle:hover {
   color: var(--peachPrimary);
-}
-
-.header-logo-wrapper > li {
-  padding: 0;
-}
-
-.header-logo-wrapper > li:last-child {
-  margin: 0;
-  padding: 5px 0 0 0;
 }
 
 .header-logo > li > a {
@@ -191,46 +181,42 @@ h3,
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding: 30px 40px;
   height: 60px;
 }
 
 .header-list {
   display: flex;
   flex-wrap: nowrap;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+  width: 443px;
+  margin: 14px 0 19px;
 }
 
-.header-list {
-  display: flex;
-  flex-wrap: nowrap;
-}
 .burger-menu {
   display: none;
 }
 
 .header-item {
-  letter-spacing: 0.006em;
-  margin-right: 37px;
-  padding-bottom: 3px;
-}
-
-.header-item:nth-child(4) {
-  margin: 0;
+  letter-spacing: 0.01em;
 }
 
 .header-link {
+  white-space: nowrap;
   color: var(--grayDarkL);
   margin: 0 auto;
+  text-decoration: none;
+  padding-bottom: 4px;
 }
 
 .header-link:active {
-  color: var(--grayDarkL);
   border-bottom: 3px solid var(--peachPrimary);
 }
 
 .header-link:hover {
   color: var(--grayDark3XL);
+  text-decoration: none;
 }
 
 .header-item > .disabled {
@@ -244,44 +230,45 @@ h3,
 .pets-content-wrapper {
   background-color: var(--grayLightL);
   background-size: 100%;
+  align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 .offers-pets-wrapper {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   max-width: 1200px;
-  grid-template-columns: repeat(4, 270px);
-  grid-template-rows: repeat(2, 435px);
-  justify-content: space-between;
-  gap: 30px;
-  align-items: center;
+  column-gap: 40px;
+  row-gap: 30px;
+  text-align: center;
+  justify-content: center;
   margin: 0 auto;
+  padding: 0 40px;
+  max-height: 900px;
+  overflow-y: hidden;
 }
 
-.pets-content-title {
-  padding: 200px 0 58px 0;
-
-  /* а нужно 60 */
+h2.pets-content-title {
+  padding: 80px 0 60px 0;
+  text-align: center;
 }
 
 .pet-card {
   background-color: var(--grayLightS);
   height: 435px;
+  border-radius: 9px;
 }
 
-/* добавить скругление углов в самой карточке */
-
-/* кнопки пагинации */
+/* PAGINATION BUTTONS */
 
 .pagination-wrapper {
   margin: 0 auto;
-  padding: 60px 430px 100px;
+  padding: 60px 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  max-width: 340px;
+  width: 340px;
 }
 
 .btn-round {
@@ -354,11 +341,11 @@ h3,
   font-family: "Georgia";
   font-style: normal;
   font-size: 20px;
+  line-height: 23px;
   font-weight: 400;
-  letter-spacing: 0.06em;
   color: var(--grayDarkL);
-  padding: 0px 0;
-  margin: 22px 0 30px 0;
+  padding: 0;
+  margin: 30px auto;
 }
 
 .btn-primary {
@@ -377,6 +364,7 @@ h3,
 .data-wrapper,
 .btn-round {
   position: relative;
+  align-items: center;
 }
 
 .pet-card > a::before,
@@ -387,7 +375,7 @@ h3,
   inset: 0;
 }
 
-/* секция footer */
+/* SECTION FOOTER */
 
 .footer-wrapper {
   background: url(../../assets/images/footer-gradient-background.jpg) no-repeat
@@ -397,27 +385,36 @@ h3,
 
 .footer-wrapper {
   position: relative;
-  padding: 40px 0 0 0;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 280px 300px 300px;
+  grid-template-columns: 278px 302px 300px;
   grid-template-rows: auto auto auto;
   grid-auto-flow: column;
   grid-column: 4;
-  width: 1200px;
-  column-gap: 160px;
-  row-gap: 32px;
+  padding: 40px 40px 0;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 33px;
 }
 
 .footer-image {
   grid-row: span 3;
 }
 
+div.phone-data > img {
+  width: 40px;
+  height: 32px;
+  display: flex;
+  margin: 0;
+}
+
 .footer-grid > h2 {
   color: var(--whiteLightXL);
   margin: 16px 0 0 0;
+  letter-spacing: 0.059em;
 }
 
 .data-wrapper {
@@ -428,13 +425,19 @@ h3,
 
 .data-wrapper > img {
   height: 32px;
-  width: auto;
   padding-right: 20px;
 }
 
 .data-wrapper > a {
   color: var(--peachPrimary);
   text-decoration: none;
+  line-height: 23px;
+}
+
+.email-data > img,
+.phone-data > img {
+  width: 40px;
+  height: 43px;
 }
 
 .data-wrapper > a:hover {
@@ -446,17 +449,20 @@ h3,
   padding-bottom: 60px;
 }
 
-@media screen and (max-width: 1260px) and (min-width: 768px) {
+/*   S T A R T   ADAPTIVE-768 */
+
+@media screen and (max-width: 980px) and (min-width: 700px) {
   /* GENERAL-768 */
 
   .wrapper {
-    margin: 0 30px;
+    padding: 0 30px;
+    margin: 0 auto;
   }
 
   /* section HEADER-768 */
 
   .header-wrapper {
-    margin: 30px;
+    margin: 30px auto;
     width: auto;
   }
 
@@ -475,50 +481,52 @@ h3,
   /* section OUR-PETS-768 */
 
   h2.pets-content-title {
-    padding: 200px 0 28px 0;
+    padding: 80px 0 30px 0;
   }
 
   div.offers-pets-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 270px);
-    grid-template-rows: repeat(3, 435px);
-    row-gap: 30px;
-    column-gap: 40px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .hidden {
-    display: none;
+    max-height: 1365px;
   }
 
-  /* PAGINATION */
+  /* PAGINATION-768 */
 
   div.pagination-wrapper {
-    padding: 40px 214px 76px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 40px 0 76px 0;
   }
 
   /* section FOOTER-768 */
 
   div.footer-wrapper {
     position: relative;
-    padding: 30px 30px 0 30px;
   }
 
   div.footer-grid {
-    grid-template-columns: 280px 300px;
+    grid-template-columns: 278px 302px;
     grid-template-rows: auto auto auto;
-    column-gap: 60px;
-    row-gap: 31px;
+    row-gap: 33px;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
-    width: 640px;
-    padding-bottom: 316px;
+    padding: 30px 64px 310px 64px;
   }
 
   .footer-grid > h2.title {
+    margin: 0;
+    letter-spacing: 0.059em;
+  }
+  .phone-data,
+  .adsress-data-2 {
+    padding-bottom: 65px;
+  }
+
+  .phone-data > img {
+    width: 40px;
+    height: 32px;
+    display: flex;
     margin: 0;
   }
 
@@ -533,13 +541,18 @@ h3,
 
 /*   S T A R T   ADAPTIVE-320 */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 699px) {
   /* GENERAL */
+
+  .wrapper {
+    padding: 0;
+    margin: 0 auto;
+  }
 
   /* section HEADER-320 */
 
   .header-wrapper {
-    margin: 30px 20px;
+    padding: 30px 20px;
     height: 60px;
   }
 
@@ -552,16 +565,19 @@ h3,
   .header-item {
     display: none;
   }
+  .header-list {
+    width: auto;
+  }
 
   .burger-menu {
     display: block;
-    margin-top: 10px;
+    padding-top: 4px;
   }
 
   /* section OUR-FRIENDS-320 */
 
   h2.pets-content-title {
-    padding: 162px 0 42px;
+    padding: 42px 0 42px;
   }
 
   .pets-cards-grid {
@@ -569,21 +585,16 @@ h3,
   }
 
   .offers-pets-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    max-height: 1365px;
+    padding: 0 10px;
   }
 
   .pets-content-wrapper > .btn-primary {
     margin: 0 0 42px 0;
   }
 
-  .pet-card:nth-child(n + 4) {
-    display: none;
-  }
-
   .pagination-wrapper {
-    min-width: 300px;
+    max-width: 300px;
     padding: 42px 10px;
     margin: 0 auto;
   }
@@ -618,6 +629,7 @@ h3,
     row-gap: 40px;
     justify-content: center;
     padding-top: 30px;
+    margin: 0 auto;
   }
 
   .data-wrapper {
@@ -625,12 +637,21 @@ h3,
   }
 
   .phone-data,
-  .adsress-data-2 {
+  .address-data-2 {
     padding-bottom: 0;
+  }
+
+  .email-data > img,
+  .phone-data > img {
+    width: 40px;
+    height: 32px;
+    display: flex;
+    margin: 0;
   }
 
   .footer-grid > h2.title {
     margin: 0;
+    padding: 0 15px;
     text-align: center;
   }
 
@@ -643,7 +664,8 @@ h3,
 
   .adsress-data-2 {
     text-align: justify;
-    width: 294px;
+    width: 300px;
   }
 }
+
 /*   F I N I S H   ADAPTIVE-320 */
