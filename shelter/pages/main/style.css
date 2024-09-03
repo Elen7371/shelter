@@ -129,8 +129,9 @@ h3,
 
 .header {
   position: absolute;
-  top: 0;
+  top: 30px;
   left: 0;
+  right: 0;
   width: 100%;
 }
 
@@ -152,10 +153,8 @@ h3,
 .header-wrapper {
   display: flex;
   flex-wrap: nowrap;
-  /* align-items: center; */
   justify-content: space-between;
-  /* margin: 30px 0px; */
-  padding: 30px 0;
+  /* padding: 30px 0; */
   height: 60px;
 }
 
@@ -361,10 +360,10 @@ h3,
   left: -1080px;
 }
 
-.item,
-/* .pet-card, */
-.pets-cards-grid {
-  display: flex;
+.item {
+/*.pet-card, 
+.pets-cards-grid */
+  display: flex; 
   margin-right: 90px;
 }
 
@@ -510,6 +509,7 @@ h3,
   padding-top: 80px;
   padding-bottom: 60px;
   text-align: center;
+  margin: 0 auto;
 }
 
 /* SECTION DONATION */
@@ -679,7 +679,7 @@ div.phone-data > img {
   }
 
   .header-wrapper {
-    padding: 30px;
+    padding: 0 30px;
   }
 
   li.header-item {
@@ -919,16 +919,21 @@ div.phone-data > img {
 
   /* section HEADER-320 */
 
+  .header {
+    top: 0;
+  }
   .header-wrapper {
     margin: 30px 20px;
     padding: 0;
     align-items: center;
   }
 
-  .header-item {
-    display: none;
-  }
   /* burger-menu + animation */
+
+.body-scroll {
+  overflow: hidden;
+  background: rgba(8, 8, 8, 0.8);
+}
 
   .burger-menu-btn {
     display: flex;
@@ -967,6 +972,66 @@ div.phone-data > img {
   .burger-logo-turn {
     transform: rotate(-90deg);
   }
+
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    bottom: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 100vh;
+    background-color: var(--grayDark3XL);
+    transition: 1s;
+    z-index: 50;
+  }
+
+  .header-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-item {
+    margin: 0 auto;
+    height: 52px;
+  line-height: 52px;
+  }
+
+  .header-link {
+  font-size: 32px;
+  line-height: 52px;
+  letter-spacing: 0em;
+  margin-bottom: 40px;
+  }
+
+  .burger-open {
+    /* display: flex; */
+    top: 0;
+    right: 0;
+  }
+
+  @keyframes move-burger {
+    from {
+      right: -320px;
+    }
+    to {
+      right: 0px;
+    }
+  }
+  
+  .transition-burger {
+    animation-name: move-burger;
+    animation-duration: 2s;
+  }
+
 
   /* section BANNER-320 */
 
@@ -1063,7 +1128,7 @@ div.phone-data > img {
   .carousel-wrapper {
     width: 300px;
     height: 435px;
-    margin: 0 10px;
+    margin: 0 auto;
     overflow: hidden;
   }
 
@@ -1085,10 +1150,11 @@ div.phone-data > img {
   .pets-content-wrapper > .btn-primary {
     margin: 0 0 42px 0;
   }
-
-  .pets-content-wrapper {
-    /* overflow: scroll; */
-  }
+  /* .pets-cards-grid {
+    position: relative;
+    display: flex;
+    /* left: 0; */
+    /* right: 0; */ */
 
   div.pet-card {
     grid-column-start: 1;
@@ -1295,6 +1361,7 @@ div.phone-data > img {
     width: 300px;
   }
 }
+
 /*   F I N I S H   ADAPTIVE-320 */
 
 .pop-up {
@@ -1318,5 +1385,6 @@ div.phone-data > img {
 }
 
 .hidden {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }

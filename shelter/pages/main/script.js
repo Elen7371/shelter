@@ -31,20 +31,27 @@ CAROUSEL.addEventListener("animationend", () => {
 
 // burger-menu: animation
 
-const BTN_LOGO = document.querySelector(".burger-menu-btn");
+const BTN_BURGER = document.querySelector(".burger-menu-btn");
+const SIDEBAR = document.querySelector(".header-nav");
+const BODY = document.querySelector("body")
 
-const turnLogo = () => {
-  BTN_LOGO.classList.toggle("burger-logo-turn");
-};
+const pressBurger = () => {
+  BTN_BURGER.classList.toggle("burger-logo-turn");
+  SIDEBAR.classList.toggle("burger-open");
+  SIDEBAR.classList.add("transition-burger");
+  BODY.classList.toggle("body-scroll")
+}
 
-BTN_LOGO.addEventListener("click", turnLogo);
+BTN_BURGER.onclick = function () {
+  
+}
 
-// BTN_LOGO.addEventListener("click", (event) => {
-//   if(event.target.classList.contains("burger-menu-logo")) {
-//     BTN_LOGO.classList.toggle("burger-logo-turn");
-//   }
-// }
-// )
+
+BTN_BURGER.addEventListener("click", pressBurger);
+
+
+// document.body.addEventListener("click", closeScroll)
+
 
 // попапы старт
 
