@@ -23,7 +23,12 @@
 
   <body>
     <!-- блок хедера -->
-
+    <div class="pop-up hidden">
+      <div class="pop-up__content">
+        <!-- POP-UP! -->
+        <button id="closeButton">Close</button>
+      </div>
+    </div>
     <header class="header">
       <div class="wrapper">
         <div class="header-wrapper">
@@ -39,7 +44,6 @@
               >
             </li>
           </ul>
-
           <nav class="header-nav">
             <ul class="header-list">
               <li class="header-item">
@@ -58,14 +62,20 @@
               <li class="header-item">
                 <a href="#contacts" class="header-link">Contacts</a>
               </li>
-              <li class="burger-menu">
-                <img
-                  src="../../assets/icons/Burger.svg"
-                  alt="burger-menu logo"
-                />
-              </li>
             </ul>
           </nav>
+          <!-- старая реализация 
+           <div class="burger-menu">
+            <span> </span>
+            <img
+              class="burger-menu-logo"
+              src="../../assets/icons/Burger.svg"
+              alt="burger-menu logo"
+            />
+          </div> -->
+          <div class="burger-menu-btn">
+            <span></span>
+          </div>
         </div>
       </div>
     </header>
@@ -75,7 +85,7 @@
       <section class="start-screen">
         <div class="start-screen-wrapper wrapper">
           <div class="banner-content">
-            <h1 class="banner-subtitle">
+            <h1 class="banner-subtitle" id="myButton">
               Not only people<br />
               need a house
             </h1>
@@ -134,59 +144,128 @@
           </h2>
           <div class="offers-pets-wrapper">
             <!-- карусель -->
+
             <div class="slider">
-              <div class="left-arrow">
-                <a href="#" class="btn-arrow">
+              <div class="left-arrow" id="btn-left">
+                <a href="javascript://" class="btn-arrow">
                   <img
                     src="../../assets/icons/Arrow-left.svg"
                     alt="left arrow logo"
                   />
                 </a>
               </div>
-              <div class="pets-cards-grid">
-                <div class="pet-card">
-                  <img
-                    width="270"
-                    src="../../assets/images/pets-katrine.jpg"
-                    alt="pet Katrine grey cat"
-                  />
-                  <h3 class="pet-name">Katrine</h3>
-                  <a
-                    href="../../pages/pets/index.html"
-                    class="btn btn-secondary"
-                    >Learn more</a
-                  >
-                </div>
-                <div class="pet-card hidden">
-                  <img
-                    width="270"
-                    src="../../assets/images/pets-jennifer.jpg"
-                    alt="pet Jennifer labrador puppy"
-                  />
-                  <h3 class="pet-name">Jennifer</h3>
-                  <a
-                    href="../../pages/pets/index.html"
-                    class="btn btn-secondary btn-to-pets"
-                    >Learn more</a
-                  >
-                </div>
-                <div class="pet-card hidden">
-                  <img
-                    width="270"
-                    src="../../assets/images/pets-woody.jpg"
-                    alt="pet Woody gold retriver dog"
-                  />
-                  <h3 class="pet-name">Woody</h3>
-                  <a
-                    href="../../pages/pets/index.html"
-                    class="btn btn-secondary"
-                    >Learn more</a
-                  >
+
+              <div class="carousel-wrapper" id="carousel-wrapper">
+                <div class="pets-cards-grid" id="carousel">
+                  <div class="item">
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-katrine.jpg"
+                        alt="pet Katrine grey cat"
+                      />
+                      <h3 class="pet-name">Katrine</h3>
+                      <a
+                        href="../../pages/pets/index.html"
+                        class="btn btn-secondary"
+                        >Learn more</a
+                      >
+                    </div>
+                    <div class="pet-card hidden">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-jennifer.jpg"
+                        alt="pet Jennifer labrador puppy"
+                      />
+                      <h3 class="pet-name">Jennifer</h3>
+                      <a
+                        href="../../pages/pets/index.html"
+                        class="btn btn-secondary btn-to-pets"
+                        >Learn more</a
+                      >
+                    </div>
+                    <div class="pet-card hidden">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-woody.jpg"
+                        alt="pet Woody gold retriver dog"
+                      />
+                      <h3 class="pet-name">Woody</h3>
+                      <a
+                        href="../../pages/pets/index.html"
+                        class="btn btn-secondary"
+                        >Learn more</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- добавляеем карточки для слайдера -->
+
+                  <div class="item">
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-sophia.jpg"
+                        alt="small black and white puppy on hands"
+                      />
+                      <h3 class="pet-name">Sophia</h3>
+                      <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-timmy.jpg"
+                        alt="gray cat looks at you"
+                      />
+                      <h3 class="pet-name">Timmy</h3>
+                      <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-charly.jpg"
+                        alt="sad dog lying"
+                      />
+                      <h3 class="pet-name">Charly</h3>
+                      <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-scarlet.jpg"
+                        alt="jack russell terrier puppy"
+                      />
+                      <h3 class="pet-name">Scarlett</h3>
+                      <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-freddie.jpg"
+                        alt="cute kitten"
+                      />
+                      <h3 class="pet-name">Freddie</h3>
+                      <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="pet-card">
+                      <img
+                        width="270"
+                        src="../../assets/images/pets-freddie.jpg"
+                        alt="cute kitten"
+                      />
+                      <h3 class="pet-name">Freddie</h3>
+                      <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- finish доп карточки для слайдера -->
 
-              <div class="right-arrow">
-                <a href="#" class="btn-arrow">
+              <div class="right-arrow" id="btn-right">
+                <a href="javascript://" class="btn-arrow">
                   <img
                     src="../../assets/icons/Arrow-right.svg"
                     alt="right arrow logo"
@@ -379,6 +458,6 @@
       </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
