@@ -127,6 +127,11 @@ h3,
 
 /* SECTION HEADER */
 
+.overlay {
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0);
+}
+
 .header {
   position: absolute;
   top: 30px;
@@ -932,7 +937,14 @@ div.phone-data > img {
 
 .body-scroll {
   overflow: hidden;
-  background: rgba(8, 8, 8, 0.8);
+  }
+
+.burger-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
   .burger-menu-btn {
@@ -988,6 +1000,7 @@ div.phone-data > img {
     background-color: var(--grayDark3XL);
     transition: 1s;
     z-index: 50;
+    /* opacity: 1; */
   }
 
   .header-list {
