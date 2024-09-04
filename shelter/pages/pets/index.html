@@ -23,9 +23,11 @@
 
   <body>
     <!-- HEADER -->
-
+    <div class="overlay"></div>
     <header class="header">
-      <div class="header-wrapper wrapper">
+      <div class="wrapper">
+      <!-- <div class="header-wrapper wrapper"> -->
+        <div class="header-wrapper">
         <div class="header-logo-wrapper">
           <a href="../../pages/main/index.html" class="header-logo-title"
             >Cozy House</a
@@ -53,15 +55,21 @@
             <li class="header-item">
               <a href="#contacts" class="header-link">Contacts</a>
             </li>
-            <li class="burger-menu">
+            </ul>
+           </nav>
+            <!-- старая реализация 
+             <li class="burger-menu">
               <img
                 class="burger-logo-svg"
                 src="../../assets/icons/Burger-Black.svg"
                 alt="burger-menu logo"
               />
-            </li>
-          </ul>
-        </nav>
+            </li> -->
+    
+          <div class="burger-menu-btn">
+            <span></span>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main">
@@ -227,6 +235,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
 

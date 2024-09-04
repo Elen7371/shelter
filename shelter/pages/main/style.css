@@ -941,7 +941,7 @@ div.phone-data > img {
 
 .burger-overlay {
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -1000,7 +1000,6 @@ div.phone-data > img {
     background-color: var(--grayDark3XL);
     transition: 1s;
     z-index: 50;
-    /* opacity: 1; */
   }
 
   .header-list {
@@ -1026,7 +1025,7 @@ div.phone-data > img {
   }
 
   .burger-open {
-    /* display: flex; */
+
     top: 0;
     right: 0;
   }

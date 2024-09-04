@@ -46,6 +46,8 @@
   --grayDark2XL: #444444;
   --grayDark3XL: #292929;
 
+  --black: #000000;
+
   --start-screen-gradient: radial-gradient(#5b483a, #262425);
   --footer-gradient: radial-gradient(#513d2f, #1a1a1c);
 }
@@ -194,9 +196,9 @@ h3,
   margin: 14px 0 19px;
 }
 
-.burger-menu {
+/* .burger-menu {
   display: none;
-}
+} */
 
 .header-item {
   letter-spacing: 0.01em;
@@ -224,6 +226,11 @@ h3,
   border-bottom: 3px solid var(--peachPrimary);
   pointer-events: none;
 }
+
+.burger-menu-btn {
+  display: none;
+}
+
 
 /*  SECTION PETS-ABOUT*/
 
@@ -451,7 +458,7 @@ div.phone-data > img {
 
 /*   S T A R T   ADAPTIVE-768 */
 
-@media screen and (max-width: 980px) and (min-width: 700px) {
+@media screen and (max-width: 980px) and (min-width: 768px) {
   /* GENERAL-768 */
 
   .wrapper {
@@ -541,7 +548,7 @@ div.phone-data > img {
 
 /*   S T A R T   ADAPTIVE-320 */
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 767px) {
   /* GENERAL */
 
   .wrapper {
@@ -562,9 +569,7 @@ div.phone-data > img {
     text-align: center;
   }
 
-  .header-item {
-    display: none;
-  }
+
   .header-list {
     width: auto;
   }
@@ -573,6 +578,117 @@ div.phone-data > img {
     display: block;
     padding-top: 4px;
   }
+
+    /* burger-menu + animation */
+
+.body-scroll { 
+  overflow: hidden;
+  }
+
+.burger-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+  .burger-menu-btn {
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 22px;
+    transition: 0.7s;
+  }
+
+  .burger-menu-btn > span {
+    height: 2px;
+    width: 100%;
+    background-color: var(--black);
+  }
+
+  .burger-menu-btn::before,
+  .burger-menu-btn::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--black);
+    transition: 0.5s;
+  }
+
+  .burger-menu-btn::before {
+    top: 0;
+  }
+  .burger-menu-btn::after {
+    bottom: 0;
+  }
+
+  .burger-logo-turn {
+    transform: rotate(-90deg);
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    bottom: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 100vh;
+    background-color: var(--whiteLightXL);
+    transition: 1s;
+    z-index: 50;
+  }
+
+  .header-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-item {
+    margin: 0 auto;
+    height: 52px;
+  line-height: 52px;
+  }
+
+  .header-link {
+  font-size: 32px;
+  line-height: 52px;
+  letter-spacing: 0em;
+  margin-bottom: 40px;
+  }
+
+  .burger-open {
+    top: 0;
+    right: 0;
+  }
+
+  @keyframes move-burger {
+    from {
+      right: -320px;
+    }
+    to {
+      right: 0px;
+    }
+  }
+  
+  .transition-burger {
+    animation-name: move-burger;
+    animation-duration: 2s;
+  }
+
 
   /* section OUR-FRIENDS-320 */
 
