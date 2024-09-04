@@ -231,7 +231,6 @@ h3,
   display: none;
 }
 
-
 /*  SECTION PETS-ABOUT*/
 
 .pets-content-wrapper {
@@ -569,7 +568,6 @@ div.phone-data > img {
     text-align: center;
   }
 
-
   .header-list {
     width: auto;
   }
@@ -579,19 +577,19 @@ div.phone-data > img {
     padding-top: 4px;
   }
 
-    /* burger-menu + animation */
+  /* burger-menu + animation */
 
-.body-scroll { 
-  overflow: hidden;
+  .body-scroll {
+    overflow: hidden;
   }
 
-.burger-overlay {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-}
+  .burger-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
 
   .burger-menu-btn {
     display: flex;
@@ -660,14 +658,14 @@ div.phone-data > img {
   .header-item {
     margin: 0 auto;
     height: 52px;
-  line-height: 52px;
+    line-height: 52px;
   }
 
   .header-link {
-  font-size: 32px;
-  line-height: 52px;
-  letter-spacing: 0em;
-  margin-bottom: 40px;
+    font-size: 32px;
+    line-height: 52px;
+    letter-spacing: 0em;
+    margin-bottom: 40px;
   }
 
   .burger-open {
@@ -683,12 +681,11 @@ div.phone-data > img {
       right: 0px;
     }
   }
-  
+
   .transition-burger {
     animation-name: move-burger;
     animation-duration: 2s;
   }
-
 
   /* section OUR-FRIENDS-320 */
 

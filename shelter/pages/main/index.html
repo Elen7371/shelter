@@ -23,15 +23,42 @@
 
   <body>
     <div class="overlay"></div>
+    <!--blackout curtain -->
 
     <!-- блок хедера -->
-    <div class="pop-up hidden">
+    <!-- POP-UP! 
+      <div class="pop-up hidden">
       <div class="pop-up__content">
-        <!-- POP-UP! -->
+      
         <button id="closeButton">Close</button>
       </div>
+    </div>-->
+
+    <div class="popup">
+      <div class="popup-wrapper">
+        <div class="popup-image">
+          <img src="../../assets/images/pets-jennifer.jpg" alt="pets image" />
+        </div>
+        <div class="popup-content">
+          <h2 class="title">Jennifer</h2>
+          <h3>Dog - Labrador</h3>
+          <p>
+            Jennifer is a sweet 2 months old Labrador that is patiently waiting
+            to find a new forever home. This girl really enjoys being able to go
+            outside to run and play, but won't hesitate to play up a storm in
+            the house if she has all of her favorite toys.
+          </p>
+          <ul class="content-list">
+            <li>&#8200;Age: <span>2 months</span></li>
+            <li>&#8200;Inoculations: <span>none</span></li>
+            <li>&#8200;Diseases: <span>none</span></li>
+            <li>&#8200;Parasites: <span>none</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
-       <!-- HEADER -->
+
+    <!-- HEADER -->
     <header class="header">
       <div class="wrapper">
         <div class="header-wrapper">
@@ -47,7 +74,7 @@
               >
             </li>
           </ul>
-               <!-- NAVIGATION - HEADER -->
+          <!-- NAVIGATION - HEADER -->
           <nav class="header-nav">
             <ul class="header-list">
               <li class="header-item">
@@ -68,15 +95,6 @@
               </li>
             </ul>
           </nav>
-          <!-- старая реализация 
-           <div class="burger-menu">
-            <span> </span>
-            <img
-              class="burger-menu-logo"
-              src="../../assets/icons/Burger.svg"
-              alt="burger-menu logo"
-            />
-          </div> -->
           <div class="burger-menu-btn">
             <span></span>
           </div>
@@ -243,7 +261,9 @@
                         alt="jack russell terrier puppy"
                       />
                       <h3 class="pet-name">Scarlett</h3>
-                      <a href="#" class="btn btn-secondary">Learn more</a>
+                      <a href="#" class="btn btn-secondary" id="open_popup"
+                        >Learn more</a
+                      >
                     </div>
                     <div class="pet-card">
                       <img
