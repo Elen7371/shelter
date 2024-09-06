@@ -424,6 +424,28 @@ h3,
   border-radius: 9px;
 }
 
+.modal-close-btn {
+  display: flex;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: 0s;
+  border: 2px solid var(--peachPrimary);
+}
+
+.modal-close-btn:hover {
+  border: 2px solid var(--peachLight);
+  background-color: var(--peachLight);
+  transition: 0s;
+}
+
 .btn-arrow {
   display: flex;
   width: 48px;
@@ -953,7 +975,7 @@ div.phone-data > img {
   .burger-menu-btn > span {
     height: 2px;
     width: 100%;
-    background-color: var(--peachPrimary);
+    /* background-color: var(--peachPrimary); */
   }
 
   .burger-menu-btn::before,
@@ -1457,6 +1479,25 @@ div.phone-data > img {
   content: "•";
   color: var(--peachPrimary);
 }
+
+/* кнопка закрытия модального окна */
+
+.modal-close-btn > span {
+  background-image: url(../../assets/icons/close.svg);
+  height: 2px;
+  width: 12px;
+  background-color: var(--black);
+}
+
+/* .modal-close-btn::before,
+  .modal-close-btn::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--peachPrimary);
+    transition: 0.5s;
+  } */
 
 /* disable scroll + overlay On*/
 
