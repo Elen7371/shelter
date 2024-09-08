@@ -1387,26 +1387,6 @@ div.phone-data > img {
 
 /*   F I N I S H   ADAPTIVE-320 */
 
-/* .pop-up {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 900px;
-  height: 500px;
-  position: absolute;
-  top: 0;
-  left: 370px;
-  background-color: rgba(20, 20, 20, 0.5);
-} */
-
-.pop-up__content {
-  /* width: 50%;
-  height: 30%; */
-  border-radius: 9px;
-  /* border: 1px solid black; */
-  background-color: var(--whiteLightXL);
-}
-
 .hidden {
   visibility: hidden;
 }
@@ -1419,7 +1399,7 @@ div.phone-data > img {
   z-index: 55;
   width: 900px;
   height: 500px;
-  border-radius: 9px;
+  border-radius: 9px 9px 9px 9px;
 }
 
 .modal-wrapper {
@@ -1430,12 +1410,9 @@ div.phone-data > img {
 }
 
 .modal-image > img {
-  /* position: relative; */
-  /* top: 0; */
-  /* bottom: 0; */
-  /* left: 0; */
   width: 500px;
   height: 100%;
+  border-radius: 9px 0px 0px 9px;
 }
 
 .modal-content {
@@ -1488,16 +1465,6 @@ div.phone-data > img {
   width: 12px;
   background-color: var(--black);
 }
-
-/* .modal-close-btn::before,
-  .modal-close-btn::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background-color: var(--peachPrimary);
-    transition: 0.5s;
-  } */
 
 /* disable scroll + overlay On*/
 
