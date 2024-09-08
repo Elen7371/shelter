@@ -117,6 +117,10 @@ const PETS = [
 //   }
 // }
 
+
+
+console.log(document.scrollBar)
+
 const BTN_LEFT = document.querySelector("#btn-left");
 const BTN_RIGHT = document.querySelector("#btn-right");
 const CAROUSEL = document.querySelector("#carousel");
@@ -166,11 +170,9 @@ const burgerToggler = () => {
   document.querySelector(".overlay").classList.toggle("overlay-on");
 };
 
-// BTN_BURGER.addEventListener("click", pressBurger);
+BODY.addEventListener("click", pressBurger);
 
-BODY.addEventListener("click", pressSomethere);
-
-function pressSomethere(event) {
+function pressBurger(event) {
   let target = event.target;
   if (
     target === BTN_BURGER /* клик на кнопку бургера*/ ||
@@ -266,16 +268,3 @@ function pressModal(event) {
   )
     modalToggler();
 }
-
-// BODY.addEventListener("click", findPets);
-
-// function findPets(event) {
-//   let petName = event.target.previousElementSibling.innerHTML;
-
-//   if (petName === "Timmy") {
-//     alert("вот он! лови");
-//   } else alert("мимо");
-// }
-
-// MODAL - TO DO:
-// 2. прицепить данные из json

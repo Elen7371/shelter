@@ -196,10 +196,6 @@ h3,
   margin: 14px 0 19px;
 }
 
-/* .burger-menu {
-  display: none;
-} */
-
 .header-item {
   letter-spacing: 0.01em;
 }
@@ -579,17 +575,17 @@ div.phone-data > img {
 
   /* burger-menu + animation */
 
-  .body-scroll {
+  /* .body-scroll {
     overflow: hidden;
-  }
+  } */
 
-  .burger-overlay {
+  /* .burger-overlay {
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
     z-index: 1;
-  }
+  } */
 
   .burger-menu-btn {
     display: flex;
@@ -782,3 +778,123 @@ div.phone-data > img {
 }
 
 /*   F I N I S H   ADAPTIVE-320 */
+
+.hidden {
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  background-color: var(--whiteLightXL);
+  font-family: "Georgia";
+  color: var(--black);
+  z-index: 55;
+  width: 900px;
+  height: 500px;
+  border-radius: 9px 9px 9px 9px;
+}
+
+.modal-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-image > img {
+  width: 500px;
+  height: 100%;
+  border-radius: 9px 0px 0px 9px;
+}
+
+.modal-content {
+  margin-left: 30px;
+  width: 351px;
+}
+
+.modal-content > p {
+  margin: 40px 0;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+}
+
+.modal-content > h2 {
+  color: var(--black);
+  height: 44px;
+  margin-bottom: 10px;
+}
+
+.modal-list {
+  height: 102px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.modal-list > li {
+  display: list-item;
+  line-height: 17px;
+  font-family: "Georgia bold";
+  letter-spacing: 0.06em;
+}
+
+.modal-list > li > span {
+  font-family: "Georgia regular";
+}
+
+.modal-list > li::before {
+  content: "•";
+  color: var(--peachPrimary);
+}
+
+/* кнопка закрытия модального окна */
+.modal-close-btn {
+  display: flex;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: 0s;
+  border: 2px solid var(--peachPrimary);
+}
+
+.modal-close-btn:hover {
+  border: 2px solid var(--peachLight);
+  background-color: var(--peachLight);
+  transition: 0s;
+}
+
+.modal-close-btn > span {
+  background-image: url(../../assets/icons/close.svg);
+  height: 2px;
+  width: 12px;
+  background-color: var(--black);
+}
+
+/* disable scroll + overlay On*/
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.overlay-on {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}

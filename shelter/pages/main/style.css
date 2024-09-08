@@ -424,27 +424,6 @@ h3,
   border-radius: 9px;
 }
 
-.modal-close-btn {
-  display: flex;
-  position: absolute;
-  top: -52px;
-  right: -42px;
-  background-color: transparent;
-  width: 50px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  text-decoration: none;
-  transition: 0s;
-  border: 2px solid var(--peachPrimary);
-}
-
-.modal-close-btn:hover {
-  border: 2px solid var(--peachLight);
-  background-color: var(--peachLight);
-  transition: 0s;
-}
 
 .btn-arrow {
   display: flex;
@@ -975,7 +954,7 @@ div.phone-data > img {
   .burger-menu-btn > span {
     height: 2px;
     width: 100%;
-    /* background-color: var(--peachPrimary); */
+    background-color: var(--peachPrimary);
   }
 
   .burger-menu-btn::before,
@@ -1457,7 +1436,31 @@ div.phone-data > img {
   color: var(--peachPrimary);
 }
 
+
 /* кнопка закрытия модального окна */
+
+
+.modal-close-btn {
+  display: flex;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: 0s;
+  border: 2px solid var(--peachPrimary);
+}
+
+.modal-close-btn:hover {
+  border: 2px solid var(--peachLight);
+  background-color: var(--peachLight);
+  transition: 0s;
+}
 
 .modal-close-btn > span {
   background-image: url(../../assets/icons/close.svg);
@@ -1465,6 +1468,7 @@ div.phone-data > img {
   width: 12px;
   background-color: var(--black);
 }
+
 
 /* disable scroll + overlay On*/
 
@@ -1480,7 +1484,7 @@ div.phone-data > img {
 
 .overlay-on {
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
   z-index: 1;
