@@ -46,6 +46,8 @@
   --grayDark2XL: #444444;
   --grayDark3XL: #292929;
 
+  --black: #000000;
+
   --start-screen-gradient: radial-gradient(#5b483a, #262425);
   --footer-gradient: radial-gradient(#513d2f, #1a1a1c);
 }
@@ -194,10 +196,6 @@ h3,
   margin: 14px 0 19px;
 }
 
-.burger-menu {
-  display: none;
-}
-
 .header-item {
   letter-spacing: 0.01em;
 }
@@ -225,6 +223,10 @@ h3,
   pointer-events: none;
 }
 
+.burger-menu-btn {
+  display: none;
+}
+
 /*  SECTION PETS-ABOUT*/
 
 .pets-content-wrapper {
@@ -232,6 +234,10 @@ h3,
   background-size: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.pets-content-wrapper-add-padding {
+  padding-right: 17px;
 }
 
 .offers-pets-wrapper {
@@ -449,9 +455,130 @@ div.phone-data > img {
   padding-bottom: 60px;
 }
 
+/* MODAL WINDOW */
+
+.hidden {
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  background-color: var(--whiteLightXL);
+  font-family: "Georgia";
+  color: var(--black);
+  z-index: 55;
+  width: 900px;
+  height: 500px;
+  border-radius: 9px 9px 9px 9px;
+}
+
+.modal-wrapper {
+  display: flex;
+  /* align-items: center; */
+  padding: 0;
+  margin: 0;
+}
+
+.modal-image > img {
+  width: 500px;
+  height: 100%;
+  border-radius: 9px 0px 0px 9px;
+}
+
+.modal-content {
+  margin-left: 30px;
+  width: 351px;
+}
+
+.modal-content > p {
+  margin: 40px 0;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+}
+
+.modal-content > h2 {
+  margin-top: 50px;
+  color: var(--black);
+  height: 44px;
+  margin-bottom: 10px;
+}
+
+.modal-list > li {
+  display: list-item;
+  line-height: 18px;
+  font-family: "Georgia bold";
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.modal-list > li:last-child {
+  margin-bottom: 0px;
+}
+
+.modal-list > li > span {
+  font-family: "Georgia regular";
+}
+
+.modal-list > li::before {
+  content: "•";
+  color: var(--peachPrimary);
+}
+
+/* кнопка закрытия модального окна */
+
+.modal-close-btn {
+  display: flex;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: 0s;
+  border: 2px solid var(--peachPrimary);
+}
+
+.modal-close-btn:hover {
+  border: 2px solid var(--peachLight);
+  background-color: var(--peachLight);
+  transition: 0s;
+}
+
+.modal-close-btn > span {
+  background-image: url(../../assets/icons/close.svg);
+  height: 2px;
+  width: 12px;
+  background-color: var(--black);
+}
+
+/* disable scroll + overlay On*/
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.overlay-on {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 /*   S T A R T   ADAPTIVE-768 */
 
-@media screen and (max-width: 980px) and (min-width: 700px) {
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   /* GENERAL-768 */
 
   .wrapper {
@@ -535,13 +662,54 @@ div.phone-data > img {
     bottom: 0;
     left: 30.5%;
   }
-}
 
+  /* MODAL WINDOW-768 */
+
+  .modal {
+    width: 630px;
+    height: 350px;
+  }
+
+  .modal-image > img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal-content {
+    margin-left: 11px;
+    width: 260px;
+  }
+
+  .modal-content > p {
+    margin: 20px 0;
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+
+  .modal-content > h2 {
+    margin-top: 10px;
+    color: var(--black);
+    font-size: 35px;
+    height: 45.5px;
+  }
+
+  .modal-content > h3 {
+    white-space: nowrap;
+  }
+
+  .modal-list > li {
+    display: list-item;
+    font-size: 15px;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 5px;
+  }
+}
 /*   F I N I S H   ADAPTIVE-768 */
 
 /*   S T A R T   ADAPTIVE-320 */
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 767px) {
   /* GENERAL */
 
   .wrapper {
@@ -562,9 +730,6 @@ div.phone-data > img {
     text-align: center;
   }
 
-  .header-item {
-    display: none;
-  }
   .header-list {
     width: auto;
   }
@@ -572,6 +737,104 @@ div.phone-data > img {
   .burger-menu {
     display: block;
     padding-top: 4px;
+  }
+
+  /* burger-menu + animation */
+
+  .burger-menu-btn {
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 22px;
+    transition: 0.7s;
+  }
+
+  .burger-menu-btn > span {
+    height: 2px;
+    width: 100%;
+    background-color: var(--black);
+  }
+
+  .burger-menu-btn::before,
+  .burger-menu-btn::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--black);
+    transition: 0.5s;
+  }
+
+  .burger-menu-btn::before {
+    top: 0;
+  }
+  .burger-menu-btn::after {
+    bottom: 0;
+  }
+
+  .burger-logo-turn {
+    transform: rotate(-90deg);
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    bottom: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 100vh;
+    background-color: var(--whiteLightXL);
+    transition: 1s;
+    z-index: 50;
+  }
+
+  .header-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-item {
+    margin: 0 auto;
+    height: 52px;
+    line-height: 52px;
+  }
+
+  .header-link {
+    font-size: 32px;
+    line-height: 52px;
+    letter-spacing: 0em;
+    margin-bottom: 40px;
+  }
+
+  .burger-open {
+    top: 0;
+    right: 0;
+  }
+
+  @keyframes move-burger {
+    from {
+      right: -320px;
+    }
+    to {
+      right: 0px;
+    }
+  }
+
+  .transition-burger {
+    animation-name: move-burger;
+    animation-duration: 2s;
   }
 
   /* section OUR-FRIENDS-320 */
@@ -665,6 +928,44 @@ div.phone-data > img {
   .adsress-data-2 {
     text-align: justify;
     width: 300px;
+  }
+
+  /* MODAL WINDOW-320 */
+
+  .modal {
+    width: 240px;
+    height: auto;
+  }
+
+  .modal-image > img {
+    display: none;
+  }
+
+  .modal-content {
+    margin: 10px 10px 10px 10px;
+    width: 220px;
+  }
+
+  .modal-content > p {
+    margin: 20px 0 24px;
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+
+  .modal-content > h2 {
+    margin-top: 0px;
+    color: var(--black);
+    font-size: 35px;
+    height: 45.5px;
+    padding-top: 0px;
+  }
+
+  .modal-list > li {
+    display: list-item;
+    line-height: 15px;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 5px;
   }
 }
 
