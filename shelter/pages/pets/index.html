@@ -22,46 +22,80 @@
   </head>
 
   <body>
-    <!-- HEADER -->
-
-    <header class="header">
-      <div class="header-wrapper wrapper">
-        <div class="header-logo-wrapper">
-          <a href="../../pages/main/index.html" class="header-logo-title"
-            >Cozy House</a
-          >
-          <a href="../../pages/main/index.html" class="header-logo-subtitle"
-            >&nbsp;Shelter for pets in Boston</a
-          >
+    <!--blackout curtain -->
+    <div class="overlay"></div>
+    <!-- M O D A L   W I N D O W -->
+    <div class="modal hidden">
+      <div class="modal-close-btn">
+        <a href="#!" class="btn-close">
+          <img
+            class="btn-close"
+            src="../../assets/icons/close.svg"
+            alt="close button logo"
+          />
+        </a>
+      </div>
+      <div class="modal-wrapper">
+        <div class="modal-image">
+          <img src="../../assets/images/pets-jennifer.jpg" alt="pets image" />
         </div>
-        <!-- NAVIGATION - HEADER -->
-        <nav class="header-nav">
-          <ul class="header-list">
-            <li class="header-item">
-              <a href="../../pages/main/index.html" class="header-link"
-                >About the shelter</a
-              >
-            </li>
-            <li class="header-item">
-              <a href="#our-pets" class="header-link disabled">Our pets</a>
-            </li>
-            <li class="header-item">
-              <a href="../../pages/main/index.html#help" class="header-link"
-                >Help the shelter</a
-              >
-            </li>
-            <li class="header-item">
-              <a href="#contacts" class="header-link">Contacts</a>
-            </li>
-            <li class="burger-menu">
-              <img
-                class="burger-logo-svg"
-                src="../../assets/icons/Burger-Black.svg"
-                alt="burger-menu logo"
-              />
-            </li>
+        <div class="modal-content">
+          <h2 class="title">Jennifer</h2>
+          <h3>Dog - Labrador</h3>
+          <p>
+            Jennifer is a sweet 2 months old Labrador that is patiently waiting
+            to find a new forever home. This girl really enjoys being able to go
+            outside to run and play, but won't hesitate to play up a storm in
+            the house if she has all of her favorite toys.
+          </p>
+          <ul class="modal-list">
+            <li>&#8200;Age: <span>2 months</span></li>
+            <li>&#8200;Inoculations: <span>none</span></li>
+            <li>&#8200;Diseases: <span>none</span></li>
+            <li>&#8200;Parasites: <span>none</span></li>
           </ul>
-        </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="wrapper">
+        <!-- <div class="header-wrapper wrapper"> -->
+        <div class="header-wrapper">
+          <div class="header-logo-wrapper">
+            <a href="../../pages/main/index.html" class="header-logo-title"
+              >Cozy House</a
+            >
+            <a href="../../pages/main/index.html" class="header-logo-subtitle"
+              >&nbsp;Shelter for pets in Boston</a
+            >
+          </div>
+          <!-- NAVIGATION - HEADER -->
+          <nav class="header-nav">
+            <ul class="header-list">
+              <li class="header-item">
+                <a href="../../pages/main/index.html" class="header-link"
+                  >About the shelter</a
+                >
+              </li>
+              <li class="header-item">
+                <a href="#our-pets" class="header-link disabled">Our pets</a>
+              </li>
+              <li class="header-item">
+                <a href="../../pages/main/index.html#help" class="header-link"
+                  >Help the shelter</a
+                >
+              </li>
+              <li class="header-item">
+                <a href="#contacts" class="header-link">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="burger-menu-btn">
+            <span></span>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main">
@@ -81,7 +115,7 @@
                 alt="pet Katrine grey cat"
               />
               <h3 class="pet-name">Katrine</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
             <div class="pet-card">
@@ -91,7 +125,7 @@
                 alt="pet Jennifer labrador puppy"
               />
               <h3 class="pet-name">Jennifer</h3>
-              <a href="#" class="btn btn-secondary btn-to-pets">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
             <div class="pet-card">
@@ -101,7 +135,7 @@
                 alt="pet Woody gold retriver dog"
               />
               <h3 class="pet-name">Woody</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
             <div class="pet-card">
@@ -111,7 +145,7 @@
                 alt="small black and white puppy on hands"
               />
               <h3 class="pet-name">Sophia</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
             <div class="pet-card">
@@ -121,7 +155,7 @@
                 alt="gray cat looks at you"
               />
               <h3 class="pet-name">Timmy</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
             <div class="pet-card">
@@ -131,27 +165,27 @@
                 alt="sad dog lying"
               />
               <h3 class="pet-name">Charly</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
-            <div class="pet-card hidden">
+            <div class="pet-card">
               <img
                 width="270"
                 src="../../assets/images/pets-scarlet.jpg"
                 alt="jack russell terrier puppy"
               />
               <h3 class="pet-name">Scarlett</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
 
-            <div class="pet-card hidden">
+            <div class="pet-card">
               <img
                 width="270"
                 src="../../assets/images/pets-freddie.jpg"
                 alt="cute kitten"
               />
               <h3 class="pet-name">Freddie</h3>
-              <a href="#" class="btn btn-secondary">Learn more</a>
+              <a href="#!" class="btn btn-secondary btn-to-pets">Learn more</a>
             </div>
           </div>
 
@@ -227,6 +261,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
 
