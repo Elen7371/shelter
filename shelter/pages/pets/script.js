@@ -96,7 +96,7 @@ const PETS = [
     diseases: ["deafness", "blindness"],
     parasites: ["lice", "fleas"],
   },
-]
+];
 
 // burger-menu: appearance and animation
 
@@ -106,6 +106,9 @@ const BODY = document.querySelector("body");
 
 const burgerToggler = () => {
   BTN_BURGER.classList.toggle("burger-logo-turn");
+  document
+    .querySelector(".pets-content-wrapper")
+    .classList.toggle("pets-content-wrapper-add-padding");
   SIDEBAR.classList.toggle("burger-open");
   SIDEBAR.classList.add("transition-burger");
   BODY.classList.toggle("disable-scroll");
@@ -134,7 +137,6 @@ const PET_CARD = document.querySelectorAll(".pet-card");
 const WINDOW_MODAL = document.querySelector(".modal");
 const OVERLAY = document.querySelector(".overlay");
 const HTML = document.documentElement;
-
 
 const modalToggler = () => {
   BODY.classList.toggle("disable-scroll"); /* выключаем скролл */

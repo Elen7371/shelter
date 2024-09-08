@@ -352,20 +352,8 @@ h3,
 }
 
 .pets-cards-grid {
-  /* как было в адаптиве
-  display: grid;
-  grid-template-columns: repeat(3, 270px);
-  text-align: center;
-  justify-content: space-between;
-  column-gap: 90px;
-  margin: 0 52px;
- */
-
-  /* как станет */
   position: relative;
   display: flex;
-  /* height: 435px; */
-  /* column-gap: 90px; */
   left: -1080px;
 }
 
@@ -390,7 +378,7 @@ h3,
 
 @keyframes move-left {
   from {
-    left: -990px;
+    left: -1080px;
   }
   to {
     left: 0px;
@@ -399,21 +387,21 @@ h3,
 
 .transition-left {
   animation-name: move-left;
-  animation-duration: 5s;
+  animation-duration: 3s;
 }
 
 @keyframes move-right {
   from {
-    left: -990px;
+    left: -1080px;
   }
   to {
-    left: -1620px;
+    left: -2160px;
   }
 }
 
 .transition-right {
   animation-name: move-right;
-  animation-duration: 5s;
+  animation-duration: 3s;
 }
 
 .pet-card {
@@ -423,7 +411,6 @@ h3,
   text-align: center;
   border-radius: 9px;
 }
-
 
 .btn-arrow {
   display: flex;
@@ -680,9 +667,130 @@ div.phone-data > img {
   height: 46px;
 }
 
+/* MODAL WINDOW */
+
+.hidden {
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  background-color: var(--whiteLightXL);
+  font-family: "Georgia";
+  color: var(--black);
+  z-index: 55;
+  width: 900px;
+  height: 500px;
+  border-radius: 9px 9px 9px 9px;
+}
+
+.modal-wrapper {
+  display: flex;
+  /* align-items: center; */
+  padding: 0;
+  margin: 0;
+}
+
+.modal-image > img {
+  width: 500px;
+  height: 100%;
+  border-radius: 9px 0px 0px 9px;
+}
+
+.modal-content {
+  margin-left: 30px;
+  width: 351px;
+}
+
+.modal-content > p {
+  margin: 40px 0;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+}
+
+.modal-content > h2 {
+  margin-top: 50px;
+  color: var(--black);
+  height: 44px;
+  margin-bottom: 10px;
+}
+
+.modal-list > li {
+  display: list-item;
+  line-height: 18px;
+  font-family: "Georgia bold";
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.modal-list > li:last-child {
+  margin-bottom: 0px;
+}
+
+.modal-list > li > span {
+  font-family: "Georgia regular";
+}
+
+.modal-list > li::before {
+  content: "•";
+  color: var(--peachPrimary);
+}
+
+/* кнопка закрытия модального окна */
+
+.modal-close-btn {
+  display: flex;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: 0s;
+  border: 2px solid var(--peachPrimary);
+}
+
+.modal-close-btn:hover {
+  border: 2px solid var(--peachLight);
+  background-color: var(--peachLight);
+  transition: 0s;
+}
+
+.modal-close-btn > span {
+  background-image: url(../../assets/icons/close.svg);
+  height: 2px;
+  width: 12px;
+  background-color: var(--black);
+}
+
+/* disable scroll + overlay On*/
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.overlay-on {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 /*   S T A R T   ADAPTIVE-768 */
 
-@media screen and (max-width: 1260px) and (min-width: 768px) {
+@media screen and (max-width: 1279px) and (min-width: 768px) {
   /* section HEADER-768 */
   .wrapper {
     max-width: auto;
@@ -909,7 +1017,50 @@ div.phone-data > img {
     bottom: 0;
     left: 30.5%;
   }
+
+  /* MODAL WINDOW-768 */
+
+  .modal {
+    width: 630px;
+    height: 350px;
+  }
+
+  .modal-image > img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal-content {
+    margin-left: 11px;
+    width: 260px;
+  }
+
+  .modal-content > p {
+    margin: 20px 0;
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+
+  .modal-content > h2 {
+    margin-top: 10px;
+    color: var(--black);
+    font-size: 35px;
+    height: 45.5px;
+  }
+
+  .modal-content > h3 {
+    white-space: nowrap;
+  }
+
+  .modal-list > li {
+    display: list-item;
+    font-size: 15px;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 5px;
+  }
 }
+
 /*   F I N I S H   ADAPTIVE-768 */
 
 /*   S T A R T   ADAPTIVE-320 */
@@ -1047,6 +1198,10 @@ div.phone-data > img {
     flex-direction: column;
   }
 
+  .start-screen-wrapper-add-padding {
+    padding-right: 27px;
+  }
+
   .banner-content {
     margin: 0 auto;
     padding: 0;
@@ -1153,11 +1308,7 @@ div.phone-data > img {
   .pets-content-wrapper > .btn-primary {
     margin: 0 0 42px 0;
   }
-  /* .pets-cards-grid {
-    position: relative;
-    display: flex;
-    /* left: 0; */
-  /* right: 0; */
+
   */ div.pet-card {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -1362,130 +1513,44 @@ div.phone-data > img {
     text-align: justify;
     width: 300px;
   }
+
+  /* MODAL WINDOW-320 */
+
+  .modal {
+    width: 240px;
+    height: auto;
+  }
+
+  .modal-image > img {
+    display: none;
+  }
+
+  .modal-content {
+    margin: 10px 10px 10px 10px;
+    width: 220px;
+  }
+
+  .modal-content > p {
+    margin: 20px 0 24px;
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+
+  .modal-content > h2 {
+    margin-top: 0px;
+    color: var(--black);
+    font-size: 35px;
+    height: 45.5px;
+    padding-top: 0px;
+  }
+
+  .modal-list > li {
+    display: list-item;
+    line-height: 15px;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 5px;
+  }
 }
 
 /*   F I N I S H   ADAPTIVE-320 */
-
-.hidden {
-  visibility: hidden;
-}
-
-.modal {
-  position: absolute;
-  background-color: var(--whiteLightXL);
-  font-family: "Georgia";
-  color: var(--black);
-  z-index: 55;
-  width: 900px;
-  height: 500px;
-  border-radius: 9px 9px 9px 9px;
-}
-
-.modal-wrapper {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-.modal-image > img {
-  width: 500px;
-  height: 100%;
-  border-radius: 9px 0px 0px 9px;
-}
-
-.modal-content {
-  margin-left: 30px;
-  width: 351px;
-}
-
-.modal-content > p {
-  margin: 40px 0;
-  font-size: 15px;
-  line-height: 17px;
-  letter-spacing: 0.06em;
-}
-
-.modal-content > h2 {
-  color: var(--black);
-  height: 44px;
-  margin-bottom: 10px;
-}
-
-.modal-list {
-  height: 102px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 38px;
-}
-
-.modal-list > li {
-  display: list-item;
-  line-height: 17px;
-  font-family: "Georgia bold";
-  letter-spacing: 0.06em;
-}
-
-.modal-list > li > span {
-  font-family: "Georgia regular";
-}
-
-.modal-list > li::before {
-  content: "•";
-  color: var(--peachPrimary);
-}
-
-
-/* кнопка закрытия модального окна */
-
-
-.modal-close-btn {
-  display: flex;
-  position: absolute;
-  top: -52px;
-  right: -42px;
-  background-color: transparent;
-  width: 50px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  text-decoration: none;
-  transition: 0s;
-  border: 2px solid var(--peachPrimary);
-}
-
-.modal-close-btn:hover {
-  border: 2px solid var(--peachLight);
-  background-color: var(--peachLight);
-  transition: 0s;
-}
-
-.modal-close-btn > span {
-  background-image: url(../../assets/icons/close.svg);
-  height: 2px;
-  width: 12px;
-  background-color: var(--black);
-}
-
-
-/* disable scroll + overlay On*/
-
-.disable-scroll {
-  overflow: hidden;
-}
-
-.overlay {
-  position: absolute;
-  transition: all 1s;
-  background: rgba(0, 0, 0, 0);
-}
-
-.overlay-on {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-}

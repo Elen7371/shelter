@@ -97,29 +97,9 @@ const PETS = [
   },
 ];
 
-// console.log(PETS[0].name)
-// console.log(PETS.length)
-
 // fetch("../../assets/pets.json")
 //   .then((response) => response.json())
 //   .then((jsonData) => console.log(jsonData.indexOf("Jennifer")));
-
-// let firstPet = "Jennifer";
-
-// клик на target
-// находим индекс объекта через имя
-// подменяем данные модалки через индекс
-// открываем модальное окно
-
-// for (let i = 0; i < PETS.length; i++) {
-//   if (PETS[i].name === firstPet) {
-//     console.log(i)
-//   }
-// }
-
-
-
-console.log(document.scrollBar)
 
 const BTN_LEFT = document.querySelector("#btn-left");
 const BTN_RIGHT = document.querySelector("#btn-right");
@@ -137,9 +117,6 @@ CAROUSEL.addEventListener("animationend", () => {
   BTN_LEFT.addEventListener("click", moveLeft);
 });
 
-// BTN_RIGHT.addEventListener("click", () => {
-//   CAROUSEL.classList.add("transition-right");
-// });
 const moveRight = () => {
   CAROUSEL.classList.add("transition-right");
   BTN_RIGHT.removeEventListener("click", moveRight);
@@ -156,6 +133,10 @@ CAROUSEL.addEventListener("animationend", () => {
 document.querySelector(".overlay").style.height =
   document.documentElement.scrollHeight;
 
+// div.remove();
+
+// document.documentElement.scrollHeight;
+
 // burger-menu: appearance and animation
 
 const BTN_BURGER = document.querySelector(".burger-menu-btn");
@@ -164,6 +145,9 @@ const BODY = document.querySelector("body");
 
 const burgerToggler = () => {
   document.body.marginRight = BTN_BURGER.classList.toggle("burger-logo-turn");
+  document
+    .querySelector(".start-screen-wrapper")
+    .classList.toggle("start-screen-wrapper-add-padding");
   SIDEBAR.classList.toggle("burger-open");
   SIDEBAR.classList.add("transition-burger");
   BODY.classList.toggle("disable-scroll");
