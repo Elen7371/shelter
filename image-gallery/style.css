@@ -234,9 +234,9 @@ footer {
     padding-bottom: 0px;
   }
 
-    button[type="reset"] {
-  height: 32px;
-  left: -70px;
+  button[type="reset"] {
+    height: 32px;
+    left: -70px;
   }
 
   button[type="submit"] {
