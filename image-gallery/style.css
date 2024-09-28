@@ -54,7 +54,7 @@ h1 {
 .logo-wrapper > img {
   width: 50px;
   height: auto;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 .search-field {
@@ -90,7 +90,7 @@ button[type="reset"] {
   position: relative;
   left: -65px;
   width: 25px;
-  height: 37px;
+  height: 25px;
   font-size: 25px;
   background-color: transparent;
   border: none;
@@ -145,8 +145,14 @@ footer {
   margin: 0 auto;
 }
 
-.github > a > img:hover {
+.github > a > img:hover,
+.rss > a > img:hover {
   opacity: 0.5;
+}
+
+.github > a > img:active,
+.rss > a > img:active {
+  opacity: 0.1;
 }
 
 /* ADAPTIVE max-767px */
