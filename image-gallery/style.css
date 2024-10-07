@@ -138,6 +138,12 @@ footer {
   margin: 20px auto;
 }
 
+.est-year {
+  display: flex;
+  align-items: center;
+  font-size: large;
+}
+
 .github > a > img,
 .rss > a > img {
   width: 65px;
