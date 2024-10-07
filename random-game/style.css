@@ -1,10 +1,8 @@
 html {
-  /* box-sizing: border-box; */
   scroll-behavior: smooth;
 }
 
 body {
-  /* background-color: rgb(41, 40, 43); */
   height: 100%;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -21,16 +19,44 @@ body {
   grid-template-columns: repeat(3, 10em);
   grid-template-rows: repeat(3, 10em);
   gap: 1em;
-  /* place-items: stretch space-between; */
   width: 32em;
   height: 32em;
-  border: 1em solid rgb(192, 179, 179);
+  border: 1em solid rgb(4, 9, 248);
   margin: 2em auto;
-  background-color: rgb(192, 179, 179);
+  background-color: rgb(4, 9, 248);
 }
 
 .data-cell {
   width: 10em;
   height: 10em;
   background-color: #fff;
+  border: 0.03em solid black;
+}
+
+tr {
+  border-bottom: 0.1em solid black;
+  text-align: center;
+}
+
+td {
+  width: 10em;
+  height: 2em;
+}
+
+.player-name {
+  width: 15em;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(255, 233, 252);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(196, 253, 255);
+}
+
+th {
+  background-color: rgb(143, 143, 255);
+  color: #fff;
+  height: 2em;
 }
