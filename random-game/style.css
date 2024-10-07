@@ -1,16 +1,36 @@
 html {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: rgb(41, 40, 43);
+  /* background-color: rgb(41, 40, 43); */
   height: 100%;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 * {
-  outline: 0;
-  margin: 0;
+  text-align: center;
+  margin: 0 auto;
   padding: 0;
   transition: 0.3s;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 10em);
+  grid-template-rows: repeat(3, 10em);
+  gap: 1em;
+  /* place-items: stretch space-between; */
+  width: 32em;
+  height: 32em;
+  border: 1em solid rgb(192, 179, 179);
+  margin: 2em auto;
+  background-color: rgb(192, 179, 179);
+}
+
+.data-cell {
+  width: 10em;
+  height: 10em;
+  background-color: #fff;
 }
