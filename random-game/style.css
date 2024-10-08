@@ -27,6 +27,7 @@ body {
 }
 
 .data-cell {
+  font-size: 1em;
   width: 10em;
   height: 10em;
   background-color: #fff;
