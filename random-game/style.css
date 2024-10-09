@@ -5,6 +5,8 @@ html {
 body {
   height: 100%;
   font-family: Georgia, "Times New Roman", Times, serif;
+  overflow: hidden;
+  /* запрет скролла для модального окна */
 }
 
 * {
@@ -60,4 +62,70 @@ th {
   background-color: rgb(143, 143, 255);
   color: #fff;
   height: 2em;
+}
+
+.modal-welcome-window {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.able-scroll {
+  overflow: visible;
+}
+
+.overlay-off {
+  position: absolute;
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-welcome-window {
+  position: absolute;
+  background-color: var(--whiteLightXL);
+  /* font-family: "Georgia"; */
+  background-color: #fff;
+  color: black;
+  z-index: 55;
+  width: 500px;
+  height: 500px;
+  border-radius: 9px 9px 9px 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-welcome-window > h2 {
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+form > span {
+  font-size: 1.5em;
+  display: block;
+  margin-bottom: 1em;
+}
+
+input {
+  margin: 1em auto;
+  width: 20em;
+  height: 3em;
+  font-size: large;
+}
+
+button {
+  display: block;
+  width: 20em;
+  height: 3em;
 }
