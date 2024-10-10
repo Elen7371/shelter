@@ -1,10 +1,29 @@
+/* FONTS -ON*/
+
+@font-face {
+  font-family: "mikratos";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/mikratos.ttf);
+}
+
+@font-face {
+  font-family: "cyberpunk";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/cyberpunk.ttf);
+}
+
+/* GENERAL PROPERTIES */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   height: 100%;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'mikratos';
+    /* font-family: "cyberpunk"; */
   overflow: hidden;
   /* запрет скролла для модального окна */
 }
@@ -84,7 +103,7 @@ th {
 
 .overlay {
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(69, 0, 197, 0.9);
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -92,10 +111,9 @@ th {
 
 .modal-welcome-window {
   position: absolute;
-  background-color: var(--whiteLightXL);
-  /* font-family: "Georgia"; */
-  background-color: #fff;
-  color: black;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(assets/images/ttt-neon.jpg);
+  background-size: cover;
   z-index: 55;
   width: 500px;
   height: 500px;
@@ -106,26 +124,31 @@ th {
   flex-direction: column;
 }
 
-.modal-welcome-window > h2 {
-  font-size: 2em;
+form > p:first-child {
+  font-weight: 700;
   margin-bottom: 2em;
+  color: #fff;
 }
 
-form > span {
+form > p {
+  color: rgb(186, 255, 255);
   font-size: 1.5em;
   display: block;
   margin-bottom: 1em;
 }
 
 input {
-  margin: 1em auto;
+  margin: 1em auto 1em;
   width: 20em;
   height: 3em;
-  font-size: large;
+  font-size: 1em;
+  border: none;
+  background-color: rgb(186, 255, 255);
 }
 
 button {
   display: block;
   width: 20em;
-  height: 3em;
+  height: 5em;
+  font-size: 1em;
 }
