@@ -7,12 +7,13 @@
 
 function showWelcomeModalPopup() {}
 
-// const BTN_MODAL = document.querySelectorAll(".btn-to-pets");
 const WINDOW_MODAL = document.querySelector(".modal-welcome-window");
 const OVERLAY = document.querySelector(".overlay");
+const BODY = document.querySelector("body");
 const HTML = document.documentElement;
 
 // расположение welcome-modal по центру
+
 WINDOW_MODAL.style = `
   top: ${
     window.scrollY + (HTML.clientHeight - WINDOW_MODAL.offsetHeight) / 2
@@ -24,22 +25,40 @@ OVERLAY.style.height = `${document.documentElement.scrollHeight}px`;
 // выключение welcome-modal
 
 const modalToggler = () => {
-  BODY.classList.toggle("able-scroll"); /* выключаем скролл */
-  OVERLAY.classList.toggle("overlay-off"); /* включаем затемнение */
-  WINDOW_MODAL.classList.toggle("hidden"); /* закрываем мод.окно */
+  BODY.classList.toggle("able-scroll"); /* включаем скролл */
+  OVERLAY.classList.toggle("hidden"); /* выключаем затемнение */
+
+  document
+    .querySelector(".start-screen")
+    .classList.toggle("hidden"); /* закрываем мод.окно */
 };
 
 const BUTTON_START = document.querySelector(".btn-submit-start");
 
-const livePlayer = document.querySelector(".btn-submit-start").input;
+const input = document.querySelector("#input[type='text']");
 
-console.log(livePlayer);
+const SCORE_LIST = document.querySelectorAll(".player-name");
 
-BUTTON_START.addEventListener("click", gameStart);
+const addName = (value) => {
+  for (let i = 0; i < SCORE_LIST.length; i++) {
+    if (SCORE_LIST[i].innerHTML === "") {
+      return (SCORE_LIST[i].append.innerHTML = value);
+      break;
+    } else if (i === 9 && SCORE_LIST[i].innerHTML !== "") {
+      return (SCORE_LIST[0].append.innerHTML = value);
+      break;
+    }
+  }
+};
+
+BUTTON_START.addEventListener("click", function (event) {
+  event.preventDefault();
+  modalToggler();
+  addName();
+});
 
 function gameStart(event) {
   let target = event.target;
-
   if (
     WINDOW_MODAL.classList.contains("hidden") &&
     target.matches(".btn-to-pets")
@@ -48,49 +67,28 @@ function gameStart(event) {
     for (let i = 0; i < PETS.length; i++) {
       if (PETS[i].name === target.previousElementSibling.innerHTML) {
         // притяжка данных по животному (по индексу)
-        WINDOW_MODAL.querySelector(".modal-image > img").setAttribute(
-          "src",
-          PETS[i].img
-        );
-        WINDOW_MODAL.querySelector(".title").innerHTML = PETS[i].name;
-        WINDOW_MODAL.querySelector("h3").innerHTML =
-          PETS[i].type + " - " + PETS[i].breed;
-        WINDOW_MODAL.querySelector("p").innerHTML = PETS[i].description;
-        WINDOW_MODAL.querySelector(
-          ".modal-list > li:nth-child(1) > span"
-        ).innerHTML = PETS[i].age;
-        WINDOW_MODAL.querySelector(
-          ".modal-list > li:nth-child(2) > span"
-        ).innerHTML = PETS[i].inoculations.join(", ");
-        WINDOW_MODAL.querySelector(
-          ".modal-list > li:nth-child(3) > span"
-        ).innerHTML = PETS[i].diseases.join(", ");
-        WINDOW_MODAL.querySelector(
-          ".modal-list > li:nth-child(4) > span"
-        ).innerHTML = PETS[i].parasites.join(", ");
-      }
-    }
-    // вычисляем центр и задаем параметры для модального окна
-    WINDOW_MODAL.style = `
+
+        // вычисляем центр и задаем параметры для модального окна
+        WINDOW_MODAL.style = `
   top: ${
     window.scrollY + (HTML.clientHeight - WINDOW_MODAL.offsetHeight) / 2
   }px;
   left: ${window.scrollX + (HTML.clientWidth - WINDOW_MODAL.offsetWidth) / 2}px;
 `;
-    OVERLAY.style.height = `${document.documentElement.scrollHeight}px`;
-    // запускаем функцию вкл/выкл
-    modalToggler();
-  } else if (
-    // закрытие модального окна
-    !WINDOW_MODAL.classList.contains("hidden") &&
-    (target.classList.contains("modal-close-btn") ||
-      target === OVERLAY ||
-      target.classList.contains("btn-close"))
-  )
-    modalToggler();
+        OVERLAY.style.height = `${document.documentElement.scrollHeight}px`;
+        // запускаем функцию вкл/выкл
+        modalToggler();
+      } else if (
+        // закрытие модального окна
+        !WINDOW_MODAL.classList.contains("hidden") &&
+        (target.classList.contains("modal-close-btn") ||
+          target === OVERLAY ||
+          target.classList.contains("btn-close"))
+      )
+        modalToggler();
+    }
+  }
 }
-
-document.querySelector(".btn-submit-start");
 
 // game logic template for 2 players
 
@@ -98,7 +96,7 @@ const statusDisplay = document.querySelector(".game-status");
 
 let gameActive = true;
 
-let currentPlayer = "x";
+let currentPlayer = "✖";
 
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
@@ -127,13 +125,12 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 }
 
 function handlePlayerChange() {
-  currentPlayer === "x" ? (currentPlayer = "o") : (currentPlayer = "x");
+  currentPlayer === "✖" ? (currentPlayer = "⭘") : (currentPlayer = "✖");
   statusDisplay.innerHTML = currentPlayerTurn();
 }
 
 function handleResultValidation() {
   let gameWon = false;
-  // проверить почему в рекомендациях <= 9
   for (let i = 0; i < 8; i++) {
     const winCondition = winningConditions[i];
     let a = gameState[winCondition[0]];
@@ -181,7 +178,7 @@ function handleCellClick(clickedCellEvent) {
 
 function handleRestart() {
   gameActive = true;
-  currentPlayer = "x";
+  currentPlayer = "✖";
   gameState = ["", "", "", "", "", "", "", "", ""];
   statusDisplay.innerHTML = currentPlayerTurn();
   document.querySelectorAll(".data-cell").forEach((el) => (el.innerHTML = ""));

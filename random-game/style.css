@@ -22,9 +22,8 @@ html {
 
 body {
   height: 100%;
-  font-family: 'mikratos';
-    /* font-family: "cyberpunk"; */
-  overflow: hidden;
+  font-family: "mikratos";
+  /* font-family: "cyberpunk"; */
   /* запрет скролла для модального окна */
 }
 
@@ -35,6 +34,12 @@ body {
   transition: 0.3s;
 }
 
+section {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(assets/images/Leonardo_Phoenix_Two_individuals_with_cyberpunk_attire_stand_w_2.jpg);
+}
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(3, 10em);
@@ -42,17 +47,53 @@ body {
   gap: 1em;
   width: 32em;
   height: 32em;
-  border: 1em solid rgb(4, 9, 248);
+  border: 1em solid rgb(117, 209, 237);
   margin: 2em auto;
-  background-color: rgb(4, 9, 248);
+  background-color: rgb(117, 209, 237);
+  opacity: 0.6;
+  justify-content: center;
+  align-items: center;
 }
 
+.title {
+  font-family: "cyberpunk";
+  font-size: 3em;
+  line-height: 3em;
+  letter-spacing: 0.6em;
+  font-weight: 900;
+  color: #da28f5;
+  text-shadow: rgb(157, 251, 117) 2px 0 15px;
+}
+
+/* .title-greetings {
+  font-family: "mikratos";
+  color: rgb(118, 233, 68);
+  font-size: 2em;
+  letter-spacing: 0.6em;
+} */
+
 .data-cell {
-  font-size: 1em;
-  width: 10em;
-  height: 10em;
-  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "cyberpunk";
+  font-size: 3em;
+  line-height: 3em;
+  color: black;
+  font-weight: 800;
+  width: 3em;
+  height: 3em;
+  background-color: #d96bea;
   border: 0.03em solid black;
+  text-shadow: rgb(85, 255, 249) 2px 0 15px;
+}
+
+.cell-occupied {
+  background-color: rgb(118, 233, 68);
+}
+
+table {
+  opacity: 0.6;
 }
 
 tr {
@@ -92,10 +133,11 @@ th {
 }
 
 .able-scroll {
-  overflow: visible;
+  /* overflow: hidden; */
 }
 
 .overlay-off {
+  /* display: none; */
   position: absolute;
   transition: all 1s;
   background: rgba(0, 0, 0, 0);
@@ -103,15 +145,20 @@ th {
 
 .overlay {
   position: absolute;
-  background: rgba(69, 0, 197, 0.9);
+  background: rgba(34, 4, 90, 0.9);
   height: 100%;
   width: 100%;
   z-index: 1;
 }
 
+.start-screen {
+  width: 100%;
+  height: 100%;
+}
+
 .modal-welcome-window {
   position: absolute;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(assets/images/ttt-neon.jpg);
   background-size: cover;
   z-index: 55;
@@ -124,15 +171,25 @@ th {
   flex-direction: column;
 }
 
-form > p:first-child {
+p:first-child {
   font-weight: 700;
-  margin-bottom: 2em;
+  font-size: 2em;
+  margin-bottom: 1.5em;
   color: #fff;
 }
 
-form > p {
+p {
+  letter-spacing: 0.06em;
   color: rgb(186, 255, 255);
-  font-size: 1.5em;
+  font-size: 1.3em;
+  display: block;
+  margin-bottom: 1em;
+}
+
+h2 {
+  letter-spacing: 0.3em;
+  color: rgb(186, 255, 255);
+  font-size: 2em;
   display: block;
   margin-bottom: 1em;
 }
@@ -142,13 +199,21 @@ input {
   width: 20em;
   height: 3em;
   font-size: 1em;
-  border: none;
+  border: 5px solid rgb(141, 124, 124);
+  /* opacity: 0.6; */
   background-color: rgb(186, 255, 255);
 }
 
 button {
   display: block;
-  width: 20em;
-  height: 5em;
-  font-size: 1em;
+  width: 400px;
+  height: 4em;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  font-family: "cyberpunk";
+  /* font-weight: bold; */
+  border-radius: 20px;
+  background-color: rgb(207, 51, 255);
+  color: rgb(140, 255, 154);
+  margin-bottom: 1em;
 }
