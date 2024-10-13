@@ -55,7 +55,7 @@ section {
   align-items: center;
 }
 .game-status {
-  height: 170px;
+  height: 150px;
 }
 
 .title {
@@ -67,13 +67,6 @@ section {
   color: #da28f5;
   text-shadow: rgb(157, 251, 117) 2px 0 15px;
 }
-
-/* .title-greetings {
-  font-family: "mikratos";
-  color: rgb(118, 233, 68);
-  font-size: 2em;
-  letter-spacing: 0.6em;
-} */
 
 .data-cell {
   justify-content: center;
@@ -210,7 +203,7 @@ input {
 button {
   display: block;
   width: 400px;
-  height: 4em;
+  height: 3em;
   font-size: 2em;
   letter-spacing: 0.1em;
   font-family: "cyberpunk";
@@ -223,13 +216,13 @@ button {
 
 button:hover {
   text-shadow: rgb(157, 251, 117) 10px 0px 15px;
-  background-color: #b000cb;;
+  background-color: #b000cb;
   color: rgb(46, 255, 81);
 }
 
 button:active {
   text-shadow: rgb(157, 251, 117) 10px 0px 15px;
-  background-color:  #d96bea;
+  background-color: #d96bea;
 }
 
 /* FOOTER section */

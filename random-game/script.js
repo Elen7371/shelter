@@ -1,11 +1,4 @@
-/* идеи для игры:
-1. игра открывается попапом с предложением ввести имя игрока и нажать кнопку старт
-2. на 1 странице приветствие "привет ..."  и ниже стартует игра
-3. под игрой' счет 10 игроков (имя, кол-во ходов, время, выигрыш) */
-
 // modal window - start screen welcome
-
-function showWelcomeModalPopup() {}
 
 const WINDOW_MODAL = document.querySelector(".modal-welcome-window");
 const OVERLAY = document.querySelector(".overlay");
@@ -22,6 +15,10 @@ WINDOW_MODAL.style = `
 `;
 OVERLAY.style.height = `${document.documentElement.scrollHeight}px`;
 
+alert(
+  "Привет! Если музыка покажется слишком навязчивой - ее можно отключить в футере"
+);
+
 // выключение welcome-modal
 
 const modalToggler = () => {
@@ -36,25 +33,36 @@ const BUTTON_START = document.querySelector(".btn-submit-start");
 
 const input = document.querySelector("#input[type='text']");
 
-const SCORE_LIST = document.querySelectorAll(".player-name");
+// let SCORE_LIST = document.querySelectorAll(".winner");
 
-const addName = (value) => {
-  for (let i = 0; i < SCORE_LIST.length; i++) {
-    if (SCORE_LIST[i].innerHTML === "") {
-      return (SCORE_LIST[i].append.innerHTML = value);
-      break;
-    } else if (i === 9 && SCORE_LIST[i].innerHTML !== "") {
-      return (SCORE_LIST[0].append.innerHTML = value);
-      break;
+const addName = () => {
+  const winner = document.querySelectorAll(".winner");
+  const xMove = document.querySelectorAll(".x-move");
+  const oMove = document.querySelectorAll(".o-move");
+  for (let i = 0; i < winner.length; i++) {
+    if (winner[i].innerHTML === "") {
+      winner[i].innerHTML = currentPlayer;
+      xMove[i].innerHTML = gameState.filter((el) => el === "✖").length;
+      oMove[i].innerHTML = gameState.filter((el) => el === "⭘").length;
+      return;
     }
   }
 };
+
+// function getResult() {
+//   const result = {
+//     winner: `${currentPlayer}`,
+//     xMove: `${gameState.filter((el) => el === "✖").length}`,
+//     oMove: `${gameState.filter((el) => el === "⭘").length}`,
+//   };
+//   localStorage.setItem("result", JSON.stringify(result));
+//   return JSON.parse(localStorage.getItem("result"));
+// }
 
 BUTTON_START.addEventListener("click", function (event) {
   event.preventDefault();
   audioBtn.play();
   modalToggler();
-  addName();
 });
 
 // game logic template for 2 players
@@ -68,12 +76,12 @@ let currentPlayer = "✖";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
 const winMessage = () => `${currentPlayer} WON! <br> <br>
-✖ - ${gameState.filter((el) => el === "✖").length} move <br>
-⭘ - ${gameState.filter((el) => el === "⭘").length} move`;
+✖ - ${gameState.filter((el) => el === "✖").length} moves <br>
+⭘ - ${gameState.filter((el) => el === "⭘").length} moves`;
 
 const drawMessage = () => `Game ended in a draw!  <br> <br>
-✖ - 5 move <br>
-⭘ - 4 move`;
+✖ - 5 moves <br>
+⭘ - 4 moves`;
 
 const currentPlayerTurn = () => `Your turn, ${currentPlayer}!`;
 
@@ -118,6 +126,7 @@ function handleResultValidation() {
     if (a === b && b === c) {
       gameWon = true;
       audioFinish.play();
+      addName();
       break;
     }
   }
@@ -125,6 +134,7 @@ function handleResultValidation() {
   if (gameWon) {
     statusDisplay.innerHTML = winMessage();
     gameActive = false;
+    audioFinish.play();
     return;
   }
 
@@ -132,6 +142,7 @@ function handleResultValidation() {
   if (roundDraw) {
     statusDisplay.innerHTML = drawMessage();
     gameActive = false;
+    audioFinish.play();
     return;
   }
 
@@ -171,24 +182,6 @@ document
   .forEach((el) => el.addEventListener("click", handleCellClick));
 
 document.querySelector(".btn-restart").addEventListener("click", handleRestart);
-
-// save result in local storage
-
-const user = {
-  name: "Giwi",
-  time: 10,
-  result: "win",
-};
-
-localStorage.setItem("user", JSON.stringify(user));
-
-console.log(JSON.parse(localStorage.getItem("user")));
-
-// localStorage.removeItem('user')
-
-// localStorage.clear();
-
-window.addEventListener("storage", (event) => alert(event));
 
 const audioMove = new Audio();
 audioMove.preload = "auto";
