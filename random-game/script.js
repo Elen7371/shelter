@@ -27,7 +27,6 @@ OVERLAY.style.height = `${document.documentElement.scrollHeight}px`;
 const modalToggler = () => {
   BODY.classList.toggle("able-scroll"); /* включаем скролл */
   OVERLAY.classList.toggle("hidden"); /* выключаем затемнение */
-
   document
     .querySelector(".start-screen")
     .classList.toggle("hidden"); /* закрываем мод.окно */
@@ -53,42 +52,10 @@ const addName = (value) => {
 
 BUTTON_START.addEventListener("click", function (event) {
   event.preventDefault();
+  audioBtn.play();
   modalToggler();
   addName();
 });
-
-function gameStart(event) {
-  let target = event.target;
-  if (
-    WINDOW_MODAL.classList.contains("hidden") &&
-    target.matches(".btn-to-pets")
-  ) {
-    // нахождение карточки животного выбранного пользователем (его индекс)
-    for (let i = 0; i < PETS.length; i++) {
-      if (PETS[i].name === target.previousElementSibling.innerHTML) {
-        // притяжка данных по животному (по индексу)
-
-        // вычисляем центр и задаем параметры для модального окна
-        WINDOW_MODAL.style = `
-  top: ${
-    window.scrollY + (HTML.clientHeight - WINDOW_MODAL.offsetHeight) / 2
-  }px;
-  left: ${window.scrollX + (HTML.clientWidth - WINDOW_MODAL.offsetWidth) / 2}px;
-`;
-        OVERLAY.style.height = `${document.documentElement.scrollHeight}px`;
-        // запускаем функцию вкл/выкл
-        modalToggler();
-      } else if (
-        // закрытие модального окна
-        !WINDOW_MODAL.classList.contains("hidden") &&
-        (target.classList.contains("modal-close-btn") ||
-          target === OVERLAY ||
-          target.classList.contains("btn-close"))
-      )
-        modalToggler();
-    }
-  }
-}
 
 // game logic template for 2 players
 
@@ -100,9 +67,13 @@ let currentPlayer = "✖";
 
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
-const winMessage = () => `${currentPlayer}, you're won!`;
+const winMessage = () => `${currentPlayer} WON! <br> <br>
+✖ - ${gameState.filter((el) => el === "✖").length} move <br>
+⭘ - ${gameState.filter((el) => el === "⭘").length} move`;
 
-const drawMessage = () => `Game ended in a draw!`;
+const drawMessage = () => `Game ended in a draw!  <br> <br>
+✖ - 5 move <br>
+⭘ - 4 move`;
 
 const currentPlayerTurn = () => `Your turn, ${currentPlayer}!`;
 
@@ -121,6 +92,7 @@ const winningConditions = [
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
   gameState[clickedCellIndex] = currentPlayer;
+  audioMove.play();
   clickedCell.innerHTML = currentPlayer;
 }
 
@@ -128,6 +100,10 @@ function handlePlayerChange() {
   currentPlayer === "✖" ? (currentPlayer = "⭘") : (currentPlayer = "✖");
   statusDisplay.innerHTML = currentPlayerTurn();
 }
+
+const audioFinish = new Audio();
+audioFinish.preload = "auto";
+audioFinish.src = "assets/sounds/finish-sound.mp3";
 
 function handleResultValidation() {
   let gameWon = false;
@@ -141,6 +117,7 @@ function handleResultValidation() {
     }
     if (a === b && b === c) {
       gameWon = true;
+      audioFinish.play();
       break;
     }
   }
@@ -176,8 +153,13 @@ function handleCellClick(clickedCellEvent) {
   handleResultValidation();
 }
 
+const audioBtn = new Audio();
+audioBtn.preload = "auto";
+audioBtn.src = "assets/sounds/push-btn.mp3";
+
 function handleRestart() {
   gameActive = true;
+  audioBtn.play();
   currentPlayer = "✖";
   gameState = ["", "", "", "", "", "", "", "", ""];
   statusDisplay.innerHTML = currentPlayerTurn();
@@ -207,3 +189,7 @@ console.log(JSON.parse(localStorage.getItem("user")));
 // localStorage.clear();
 
 window.addEventListener("storage", (event) => alert(event));
+
+const audioMove = new Audio();
+audioMove.preload = "auto";
+audioMove.src = "assets/sounds/move-sound.wav";
