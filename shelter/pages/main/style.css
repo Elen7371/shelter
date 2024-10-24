@@ -385,7 +385,7 @@ h3,
   }
 }
 
-.transition-left {
+.transition-right {
   animation-name: move-left;
   animation-duration: 3s;
 }
