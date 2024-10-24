@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TTT - TicTacToe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/images/favicon.ico" />
+  </head>
+  <body>
+    <!--blackout curnotain -->
+    <div class="overlay"></div>
+    <!--blackout curtain finish-->
+    <section>
+      <!-- start-screen modal window -->
+      <div class="start-screen">
+        <div class="modal-welcome-window">
+          <!-- <form action=""> -->
+          <p>
+            Welcome to<br /><br />
+            Tic Tac Toe game!
+          </p>
+          <!-- <p>Enter your name below:</p>
+            <input type="text" id="live-player" placeholder="Human" /> -->
+          <button class="btn-submit-start">
+            submit <br />
+            START
+          </button>
+          <!-- </form> -->
+        </div>
+      </div>
+      <!-- finish start-screen modal window -->
+      <h1 class="title">Tic Tac Toe</h1>
+      <h2 class="game-status"></h2>
+      <!-- <h2 class="title-greetings">Hi, Human!</h2> -->
+      <div class="game-board">
+        <div data-cell-index="0" class="data-cell"></div>
+        <div data-cell-index="1" class="data-cell"></div>
+        <div data-cell-index="2" class="data-cell"></div>
+        <div data-cell-index="3" class="data-cell"></div>
+        <div data-cell-index="4" class="data-cell"></div>
+        <div data-cell-index="5" class="data-cell"></div>
+        <div data-cell-index="6" class="data-cell"></div>
+        <div data-cell-index="7" class="data-cell"></div>
+        <div data-cell-index="8" class="data-cell"></div>
+      </div>
+      <div class="game-score-wrapper">
+        <button class="btn-restart">Restart game</button>
+        <h2>Score history</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Winner</th>
+              <th>✖-moves</th>
+              <th>⭘-moves</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+            <tr>
+              <td class="winner"></td>
+              <td class="x-move"></td>
+              <td class="o-move"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer>
+        <div class="footer-wrapper">
+          <div class="github">
+            <a href="https://github.com/Elen7371">
+              <img src="assets/images/github-logo.svg" alt="github logo" />
+            </a>
+          </div>
+          <div class="est-year">2024</div>
+          <div class="rss">
+            <a href="https://rs.school/courses/javascript-preschool-ru">
+              <img src="assets/images/rss-logo.svg" alt="github logo" />
+            </a>
+          </div>
+        </div>
+      </footer>
+      <audio
+        src="assets/sounds/bg-music.mp3"
+        autoplay
+        loop
+        preload
+        controls="false"
+      ></audio>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

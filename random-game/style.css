@@ -1,0 +1,266 @@
+/* FONTS -ON*/
+
+@font-face {
+  font-family: "mikratos";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/mikratos.ttf);
+}
+
+@font-face {
+  font-family: "cyberpunk";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/cyberpunk.ttf);
+}
+
+/* GENERAL PROPERTIES */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  font-family: "mikratos";
+  /* font-family: "cyberpunk"; */
+  /* запрет скролла для модального окна */
+}
+
+* {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  transition: 0.3s;
+}
+
+section {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(assets/images/Leonardo_Phoenix_Two_individuals_with_cyberpunk_attire_stand_w_2.jpg);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 10em);
+  grid-template-rows: repeat(3, 10em);
+  gap: 1em;
+  width: 32em;
+  height: 32em;
+  border: 1em solid rgb(117, 209, 237);
+  margin: 2em auto;
+  background-color: rgb(117, 209, 237);
+  opacity: 0.6;
+  justify-content: center;
+  align-items: center;
+}
+.game-status {
+  height: 150px;
+}
+
+.title {
+  font-family: "cyberpunk";
+  font-size: 3em;
+  line-height: 3em;
+  letter-spacing: 0.6em;
+  font-weight: 900;
+  color: #da28f5;
+  text-shadow: rgb(157, 251, 117) 2px 0 15px;
+}
+
+.data-cell {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "cyberpunk";
+  font-size: 3em;
+  line-height: 3em;
+  color: black;
+  font-weight: 800;
+  width: 3em;
+  height: 3em;
+  background-color: #d96bea;
+  border: 0.03em solid black;
+  text-shadow: rgb(85, 255, 249) 2px 0 15px;
+}
+
+.cell-occupied {
+  background-color: rgb(118, 233, 68);
+}
+
+table {
+  opacity: 0.6;
+}
+
+tr {
+  border-bottom: 0.1em solid black;
+  text-align: center;
+}
+
+td {
+  width: 10em;
+  height: 2em;
+}
+
+.player-name {
+  width: 15em;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(255, 233, 252);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(196, 253, 255);
+}
+
+th {
+  background-color: rgb(143, 143, 255);
+  color: #fff;
+  height: 2em;
+}
+
+.modal-welcome-window {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.able-scroll {
+  /* overflow: hidden; */
+}
+
+.overlay-off {
+  /* display: none; */
+  position: absolute;
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0);
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(34, 4, 90, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.start-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-welcome-window {
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(assets/images/ttt-neon.jpg);
+  background-size: cover;
+  z-index: 55;
+  width: 500px;
+  height: 500px;
+  border-radius: 9px 9px 9px 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p:first-child {
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+  color: #fff;
+}
+
+p {
+  letter-spacing: 0.06em;
+  color: rgb(186, 255, 255);
+  font-size: 1.3em;
+  display: block;
+  margin-bottom: 1em;
+}
+
+h2 {
+  letter-spacing: 0.3em;
+  color: rgb(186, 255, 255);
+  font-size: 2em;
+  display: block;
+  margin-bottom: 1em;
+}
+
+input {
+  margin: 1em auto 1em;
+  width: 20em;
+  height: 3em;
+  font-size: 1em;
+  border: 5px solid rgb(141, 124, 124);
+  /* opacity: 0.6; */
+  background-color: rgb(186, 255, 255);
+}
+
+button {
+  display: block;
+  width: 400px;
+  height: 3em;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  font-family: "cyberpunk";
+  /* font-weight: bold; */
+  border-radius: 20px;
+  background-color: rgb(207, 51, 255);
+  color: rgb(140, 255, 154);
+  margin-bottom: 1em;
+}
+
+button:hover {
+  text-shadow: rgb(157, 251, 117) 10px 0px 15px;
+  background-color: #b000cb;
+  color: rgb(46, 255, 81);
+}
+
+button:active {
+  text-shadow: rgb(157, 251, 117) 10px 0px 15px;
+  background-color: #d96bea;
+}
+
+/* FOOTER section */
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+}
+
+.github,
+.rss {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  margin: 20px auto;
+}
+
+.est-year {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  color: rgb(132, 232, 255);
+}
+
+.github > a > img,
+.rss > a > img {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto;
+}
+
+.github > a > img:hover,
+.rss > a > img:hover {
+  opacity: 0.5;
+}
+
+.github > a > img:active,
+.rss > a > img:active {
+  opacity: 0.1;
+}
